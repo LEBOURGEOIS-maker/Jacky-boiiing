@@ -1,80 +1,113 @@
 extends CharacterBody2D
 
 @export var move_speed : float = 100
-@export var starting_direction : Vector2 = Vector2(0, 1)
+@export var starting_direction : Vector2 = Vector2(0,1)
+@export var timer_duration : float = 10  # Set the timer duration in seconds
 
 @onready var animation_tree = $AnimationTree
 @onready var state_machine = animation_tree.get("parameters/playback")
-@export var tilemap_path: NodePath  # Path to the TileMap node
-var tilemap: TileMap  # Reference to the TileMap
-var is_game_over : bool = false  # Variable to manage game state (lost or not)
+
+@export var tilemap_path: NodePath  # Chemin vers le TileMap
+var tilemap: TileMapLayer
+var is_game_over : bool = false  # Variable pour gérer l'état du jeu (perdu ou non)
+var timer : float = timer_duration  # Timer initialized with duration
+var elapsed_time : float = 0  # Track elapsed time
+
+@onready var lose_panel = get_parent().get_node("UI/PanelPerdu")
+@onready var timer_panel = get_parent().get_node("UI/TimerPanel")  # Panel where the timer will be shown
+@onready var timer_label = timer_panel.get_node("Label")  # Label to display the timer
 
 func _ready():
-	# Print the current node path for debugging
-	print("TileMap path: ", tilemap_path)
-
-	# Use the exported path variable to find the TileMap node
-	tilemap = get_node_or_null(tilemap_path)
 	
-	if tilemap == null:
-		push_error("TileMap not found! Check the node path.")
-		return
-	else:
-		print("TileMap found successfully!")
+	if timer_panel:
+		print("timer_panel found. Making it visible.")  # Debug : le panneau est trouvé
+		lose_panel.visible = true
+		print("Panel visibility set to: ", timer_panel.visible)
+		
+		# Ajout de tests pour la position et la taille du Panel
+		print("Panel position: ", timer_panel.position)  # Utiliser position au lieu de rect_position
+		
+		# Forcer la visibilité et ajuster la position si nécessaire
+		timer_panel.position = Vector2(160, 0)  # Position dans la fenêtre
+
+		# Assurez-vous que le panneau soit au-dessus des autres éléments
+		timer_panel.z_index = 10
+		print("Panel Z-Index: ", timer_panel.z_index)
+		
+		# Optionnel : changer la couleur du panel pour le rendre plus visible
+		#timer_panel.modulate = Color(1, 0, 0)
+		
+		tilemap = get_node_or_null("../TileMap")
+		if tilemap == null:
+			push_error("TileMap not found! Check the node path.")
+			return
+		else:
+			print("TileMap found successfully!")
 
 
-func _process(delta):
+func _process(_delta):
 	if is_game_over:
-		return  # Prevent movement if game is over
+		return  # Si le jeu est perdu, empêcher tout mouvement
+
+	# Decrement timer and check if it's time to lose
+	timer -= _delta
+	if timer <= 0:
+		show_lose_message()
+	
+	# Update the timer label
+	timer_label.text = str(int(timer))
+
 	if is_in_empty_zone():
 		show_lose_message()
 
 func is_in_empty_zone() -> bool:
 	if tilemap == null:
-		return false  # If TileMap is absent, assume we are not in an empty zone
+		return false  # Si le TileMap est absent, on considère qu'on n'est pas dans une zone vide
 
-	# Convert the player’s global position to grid coordinates
-	var grid_position = tilemap.world_to_map(global_position)
-
-	# Check if the cell at the grid position is empty (no tile)
-	return tilemap.get_cell(grid_position.x, grid_position.y) == -1
+	# Convertir la position globale du joueur en position de grille
+	var grid_position = tilemap.local_to_map(global_position)
+	# Vérifier si la cellule est vide (-1 signifie qu'il n'y a pas de tile)
+	return tilemap.get_cell_source_id(grid_position) == -1
 
 func show_lose_message():
-	print("Executing method show_lose_message")  # Debug message
-
-	# Find the lose panel
-	var lose_panel = get_parent().get_node("UI/PerduPanel")
+	print("Executing method show_lose_message")  # Message de débogage principal
 
 	if lose_panel:
-		print("Panel found. Making it visible.")  # Debug: panel found
+		print("Panel found. Making it visible.")  # Debug : le panneau est trouvé
 		lose_panel.visible = true
 		print("Panel visibility set to: ", lose_panel.visible)
+		
+		# Ajout de tests pour la position et la taille du Panel
+		print("Panel position: ", lose_panel.position)  # Utiliser `position` au lieu de `rect_position`
+		
+		# Forcer la visibilité et ajuster la position si nécessaire
+		lose_panel.position = Vector2(100, 100)  # Position dans la fenêtre
 
-		# Adjust position and visibility of the panel
-		lose_panel.position = Vector2(100, 100)  # Adjust the position if necessary
-
-		# Ensure panel is on top of other UI elements
+		# Assurez-vous que le panneau soit au-dessus des autres éléments
 		lose_panel.z_index = 10
 		print("Panel Z-Index: ", lose_panel.z_index)
-
-		# Mark game as over
+		
+		# Optionnel : changer la couleur du panel pour le rendre plus visible
+		lose_panel.modulate = Color(1, 0, 0)  # Colore le panneau en rouge pour le tester
+		
+		# Marquer l'état du jeu comme perdu
 		is_game_over = true
 	else:
-		print("Error: Panel not found! Check your scene structure.")  # Debug: panel not found
+		print("Error: Panel not found! Check your scene structure.")  # Debug : le panneau est introuvable
 
-	# Disable player controls after game over
+	# Désactiver les contrôles après affichage du message
 	set_process(false)
 
 func _physics_process(_delta):
 	if is_game_over:
-		return  # Prevent player movement if game is over
+		return  # Empêcher le mouvement du joueur lorsque le jeu est perdu
 	
 	var input_direction = Vector2(
 		Input.get_action_strength("right") - Input.get_action_strength("left"),
 		Input.get_action_strength("down") - Input.get_action_strength("up")
 	)
 	
-	# Update animations and movement
+	# Update des animations et des mouvements
 	update_animation_parameters(input_direction)
 	velocity = input_direction * move_speed
 	move_and_slide()
