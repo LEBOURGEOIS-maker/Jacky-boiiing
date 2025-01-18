@@ -25,9 +25,9 @@ func add_key():
 
 func handle_character_movement(delta):
 	if movement_enabled:
-		if Input.is_action_pressed("move_right"):
+		if Input.is_action_pressed("ui_right"):
 			position.x += 100 * delta
-		elif Input.is_action_pressed("move_left"):
+		elif Input.is_action_pressed("ui_left"):
 			position.x -= 100 * delta
 
 func _process(delta):
