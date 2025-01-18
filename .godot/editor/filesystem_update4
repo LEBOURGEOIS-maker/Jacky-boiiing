@@ -3,3 +3,6 @@ res://Characters/character_body_2d.tscn
 res://Scenes/mainMenu.tscn
 res://Scenes/credits.tscn
 res://Characters/player.gd
+res://beer.gd
+res://Scenes/main_scene.gd
+res://Scenes/beer.tscn

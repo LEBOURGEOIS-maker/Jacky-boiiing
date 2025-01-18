@@ -1,9 +1,11 @@
-[gd_scene load_steps=8 format=4 uid="uid://b2y48jmww6633"]
+[gd_scene load_steps=10 format=4 uid="uid://b2y48jmww6633"]
 
+[ext_resource type="Script" path="res://Scenes/main_scene.gd" id="1_aq7at"]
 [ext_resource type="PackedScene" uid="uid://qwwidd5peaqv" path="res://Characters/character_body_2d.tscn" id="1_tq50b"]
 [ext_resource type="Texture2D" uid="uid://dj7j26n7ciu5" path="res://Assets/Libraries/Sprout Lands - Sprites - Basic pack/Tilesets/Grass.png" id="2_7adly"]
 [ext_resource type="Script" path="res://Characters/player.gd" id="2_hv1rr"]
 [ext_resource type="Script" path="res://Scripts/looseAndRetry.gd" id="4_2at1w"]
+[ext_resource type="PackedScene" uid="uid://bnclgwkqmdeli" path="res://Scenes/beer.tscn" id="6_o4cu3"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wr5d2"]
 bg_color = Color(0.155485, 0.167241, 0.387745, 1)
@@ -85,7 +87,8 @@ texture = ExtResource("2_7adly")
 [sub_resource type="TileSet" id="TileSet_vgcvj"]
 sources/0 = SubResource("TileSetAtlasSource_nshra")
 
-[node name="Node2D" type="Node2D"]
+[node name="GameLevel" type="Node2D"]
+script = ExtResource("1_aq7at")
 
 [node name="Player" parent="." instance=ExtResource("1_tq50b")]
 script = ExtResource("2_hv1rr")
@@ -131,21 +134,39 @@ script = ExtResource("4_2at1w")
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -1982.0
+offset_left = -1938.0
 offset_top = 23.0
-offset_right = -1839.0
-offset_bottom = 73.0
+offset_right = -1855.0
+offset_bottom = 56.0
 grow_horizontal = 0
 tooltip_text = "Timer"
 theme_override_styles/panel = SubResource("StyleBoxFlat_wr5d2")
 
 [node name="Label" type="Label" parent="UI/TimerPanel"]
 layout_mode = 0
-offset_left = 90.0
-offset_top = 11.0
-offset_right = 141.0
-offset_bottom = 34.0
-text = "Time"
+offset_left = 45.0
+offset_top = 6.0
+offset_right = 93.0
+offset_bottom = 29.0
+vertical_alignment = 1
+
+[node name="ScoreLabel" type="Panel" parent="UI"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -143.0
+offset_bottom = 50.0
+grow_horizontal = 0
+tooltip_text = "Timer"
+theme_override_styles/panel = SubResource("StyleBoxFlat_wr5d2")
+
+[node name="Label" type="Label" parent="UI/ScoreLabel"]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 13.0
+offset_right = 121.0
+offset_bottom = 36.0
+text = "Score X / 5"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -156,5 +177,28 @@ tile_set = SubResource("TileSet_vgcvj")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 5.0
+
+[node name="beer" parent="." instance=ExtResource("6_o4cu3")]
+position = Vector2(-31, 46)
+
+[node name="beer2" parent="." instance=ExtResource("6_o4cu3")]
+position = Vector2(85, 44)
+
+[node name="beer3" parent="." instance=ExtResource("6_o4cu3")]
+position = Vector2(104, 17)
+
+[node name="beer4" parent="." instance=ExtResource("6_o4cu3")]
+position = Vector2(84, -18)
+
+[node name="beer5" parent="." instance=ExtResource("6_o4cu3")]
+position = Vector2(51, -42)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="KeyCounterLabel" type="Label" parent="CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
 
 [connection signal="pressed" from="UI/PanelPerdu/RetryButton" to="UI/PanelPerdu/RetryButton" method="_on_pressed"]

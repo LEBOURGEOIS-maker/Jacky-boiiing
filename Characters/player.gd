@@ -15,7 +15,10 @@ var elapsed_time : float = 0  # Track elapsed time
 
 @onready var lose_panel = get_parent().get_node("UI/PanelPerdu")
 @onready var timer_panel = get_parent().get_node("UI/TimerPanel")  # Panel where the timer will be shown
-@onready var timer_label = timer_panel.get_node("Label")  # Label to display the timer
+@onready var timer_label = timer_panel.get_node("Label")  
+
+@onready var score_panel = get_parent().get_node("UI/ScoreLabel")  # Panel where the timer will be shown
+@onready var score_label = score_panel.get_node("Label")  
 
 func _ready():
 	
@@ -23,27 +26,49 @@ func _ready():
 		print("timer_panel found. Making it visible.")  # Debug : le panneau est trouvé
 		lose_panel.visible = true
 		print("Panel visibility set to: ", timer_panel.visible)
-		
-		# Ajout de tests pour la position et la taille du Panel
-		print("Panel position: ", timer_panel.position)  # Utiliser position au lieu de rect_position
-		
-		# Forcer la visibilité et ajuster la position si nécessaire
-		timer_panel.position = Vector2(160, 0)  # Position dans la fenêtre
 
-		# Assurez-vous que le panneau soit au-dessus des autres éléments
-		timer_panel.z_index = 10
-		print("Panel Z-Index: ", timer_panel.z_index)
-		
-		# Optionnel : changer la couleur du panel pour le rendre plus visible
-		#timer_panel.modulate = Color(1, 0, 0)
-		
+		# Créer un Label et définir son texte
+		var label = timer_panel.get_node_or_null("TimerLabel")  # Assurez-vous que le Label s'appelle "TimerLabel" dans l'éditeur
+		if label == null:
+			# Si le Label n'existe pas encore, créez-le.
+			label = Label.new()
+			label.name = "TimerLabel"  # Donne un nom au Label pour le retrouver plus facilement
+			timer_panel.add_child(label)  # Ajoute le Label au panneau
+			#label.text = "Timer : "
+
+			# Positionner le panneau à un endroit spécifique
+			timer_panel.position = Vector2(150, 0)  # Position dans la fenêtre
+
+			# Assurez-vous que le panneau soit au-dessus des autres éléments
+			timer_panel.z_index = 10
+			print("Panel Z-Index: ", timer_panel.z_index)
+
+			# Debug : Afficher la position du panneau
+			print("Panel position: ", timer_panel.position)
+
+			# Trouver le TileMap
+			tilemap = get_node_or_null("../TileMap")
+			if tilemap == null:
+				push_error("TileMap not found! Check the node path.")
+				return
+			else:
+				print("TileMap found successfully!")
+
+
+	if score_label:
+		score_label.visible = true
+		print("timer_panel found. Making it visible.")  # Debug : le panneau est trouvé
+		print("Panel visibility set to: ", score_label.visible)
+		print("Panel position: ", score_label.position)  # Utiliser position au lieu de rect_position
+		score_label.position = Vector2(50, 20)  # Position dans la fenêtre
+		score_label.z_index = 10
+		print("Panel Z-Index: ", score_label.z_index)
 		tilemap = get_node_or_null("../TileMap")
 		if tilemap == null:
 			push_error("TileMap not found! Check the node path.")
 			return
 		else:
 			print("TileMap found successfully!")
-
 
 func _process(_delta):
 	if is_game_over:
