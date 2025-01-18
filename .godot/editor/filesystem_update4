@@ -1,7 +1,5 @@
-res://Characters/character_body_2d.tscn
 res://Scenes/mainScene.tscn
+res://Characters/character_body_2d.tscn
 res://Scenes/mainMenu.tscn
 res://Scenes/credits.tscn
-res://Characters/character_body_2d.gd
 res://Characters/player.gd
-res://Scripts/looseAndRetry.gd
