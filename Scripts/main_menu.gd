@@ -13,7 +13,7 @@ func _on_nouvelle_partie_button_go_to_game() -> void:
 # Fonction pour afficher les crédits
 func _on_credits_button_credits() -> void:
 	# Ajouter la scène actuelle à la pile via NavigationManager
-	NavigationManager.add_scene_to_stack("res://Scenes/credits.tscn")
+	NavigationManager.add_scene_to_stack("res://Scenes/mainMenu.tscn")
 	# Changer la scène pour les crédits
 	get_tree().change_scene_to_file("res://Scenes/credits.tscn")
 
