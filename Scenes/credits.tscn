@@ -1,0 +1,86 @@
+[gd_scene load_steps=5 format=3 uid="uid://cu56j5uipmn84"]
+
+[ext_resource type="Texture2D" uid="uid://cxesqlxodwmmb" path="res://Assets/Personals/wallpaperMenu.jpg" id="1_gwkoy"]
+[ext_resource type="Script" path="res://Scenes/backToMenu.gd" id="1_lub4b"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_a64lm"]
+line_spacing = 6.0
+font_size = 25
+outline_size = 1
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_n1plq"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lub4b")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.897
+anchor_bottom = 0.249
+offset_left = 725.0
+offset_top = 5.0
+offset_right = -324.24
+offset_bottom = -29.92
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_gwkoy")
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Background"]
+remote_path = NodePath("../Titre/Camera2D")
+
+[node name="Titre" type="Label" parent="Background"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -253.5
+offset_right = 253.5
+offset_bottom = 96.0
+grow_horizontal = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+text = "Crédits"
+label_settings = SubResource("LabelSettings_a64lm")
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="Camera2D" type="Camera2D" parent="Background/Titre"]
+position = Vector2(-146.5, 0)
+offset = Vector2(410, 200)
+zoom = Vector2(0.5, 0.5)
+
+[node name="CreditsBloc" type="Panel" parent="Background/Titre"]
+layout_mode = 2
+offset_left = 119.0
+offset_top = 87.0
+offset_right = 419.0
+offset_bottom = 87.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_n1plq")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Background/Titre/CreditsBloc"]
+layout_mode = 0
+offset_top = -4.0
+offset_right = 300.0
+offset_bottom = 134.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Background/Titre/CreditsBloc/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/table_border = Color(0, 0, 0, 1)
+text = "@rosita - LEBOURGEOIS Emilie
+@gogoud - LEBOURGEOIS Fabien"
+fit_content = true
+
+[node name="Retour" type="Button" parent="Background/Titre/CreditsBloc/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Retour
+"
+
+[connection signal="button_down" from="Background/Titre/CreditsBloc/VBoxContainer/Retour" to="." method="_on_retour_button_go_to_mainMenu"]

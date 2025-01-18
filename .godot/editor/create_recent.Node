@@ -1,3 +1,6 @@
-Camera2D
+Panel
+RichTextLabel
 RemoteTransform2D
+Camera2D
+TileMap
 CollisionShape2D

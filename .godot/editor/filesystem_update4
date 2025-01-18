@@ -1,3 +1,9 @@
 res://Characters/character_body_2d.tscn
 res://Scenes/mainScene.tscn
 res://Characters/character_body_2d.gd
+res://Scenes/mainMenu.tscn
+res://Scripts/main_menu.gd
+res://Scenes/credits.tscn
+res://Scripts/backToMenu.gd
+res://Scenes/backToMenu.gd
+res://Scripts/navigationManager.gd
