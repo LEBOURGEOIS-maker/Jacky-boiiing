@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://b2y48jmww6633"]
+
+[ext_resource type="PackedScene" uid="uid://qwwidd5peaqv" path="res://Characters/character_body_2d.tscn" id="1_tq50b"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_tq50b")]
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
