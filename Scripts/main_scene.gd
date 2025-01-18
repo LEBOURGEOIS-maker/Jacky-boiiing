@@ -1,4 +1,4 @@
-extends Node
+extends Node2Ddz
 
 # Références à votre Timer, Panel et Label dans UI
 @onready var timer = $Timer

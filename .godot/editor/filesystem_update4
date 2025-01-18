@@ -6,3 +6,5 @@ res://Characters/player.gd
 res://beer.gd
 res://Scenes/main_scene.gd
 res://Scenes/beer.tscn
+res://Scripts/main_scene.gd
+res://Scenes/next_level_button.gd

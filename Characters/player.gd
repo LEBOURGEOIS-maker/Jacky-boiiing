@@ -17,9 +17,6 @@ var elapsed_time : float = 0  # Track elapsed time
 @onready var timer_panel = get_parent().get_node("UI/TimerPanel")  # Panel where the timer will be shown
 @onready var timer_label = timer_panel.get_node("Label")  
 
-@onready var score_panel = get_parent().get_node("UI/ScoreLabel")  # Panel where the timer will be shown
-@onready var score_label = score_panel.get_node("Label")  
-
 func _ready():
 	
 	if timer_panel:
@@ -53,22 +50,6 @@ func _ready():
 				return
 			else:
 				print("TileMap found successfully!")
-
-
-	if score_label:
-		score_label.visible = true
-		print("timer_panel found. Making it visible.")  # Debug : le panneau est trouvé
-		print("Panel visibility set to: ", score_label.visible)
-		print("Panel position: ", score_label.position)  # Utiliser position au lieu de rect_position
-		score_label.position = Vector2(50, 20)  # Position dans la fenêtre
-		score_label.z_index = 10
-		print("Panel Z-Index: ", score_label.z_index)
-		tilemap = get_node_or_null("../TileMap")
-		if tilemap == null:
-			push_error("TileMap not found! Check the node path.")
-			return
-		else:
-			print("TileMap found successfully!")
 
 func _process(_delta):
 	if is_game_over:

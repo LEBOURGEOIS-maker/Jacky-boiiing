@@ -1,5 +1,8 @@
-Sprite2D
 Label
+Panel
+Button
+Popup
+Sprite2D
 CanvasLayer
 CollisionShape2D
 Area2D
@@ -9,6 +12,3 @@ TileMapLayer
 Timer
 Node2D
 AnimationTree
-AnimationPlayer
-Button
-Panel
