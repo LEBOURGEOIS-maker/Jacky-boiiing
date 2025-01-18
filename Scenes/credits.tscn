@@ -73,8 +73,7 @@ offset_bottom = 134.0
 [node name="RichTextLabel" type="RichTextLabel" parent="Background/Titre/CreditsBloc/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/table_border = Color(0, 0, 0, 1)
-text = "@rosita - LEBOURGEOIS Emilie
-@gogoud - LEBOURGEOIS Fabien"
+text = "itch.io : @Roseti (LEBOURGEOIS Emilie); @gogoud - LEBOURGEOIS Fabien"
 fit_content = true
 
 [node name="Retour" type="Button" parent="Background/Titre/CreditsBloc/VBoxContainer"]
