@@ -7,3 +7,4 @@ res://Scenes/credits.tscn
 res://Scripts/backToMenu.gd
 res://Scenes/backToMenu.gd
 res://Scripts/navigationManager.gd
+res://Characters/player.gd

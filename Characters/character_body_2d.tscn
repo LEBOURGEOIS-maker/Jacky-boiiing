@@ -1,19 +1,52 @@
-[gd_scene load_steps=4 format=3 uid="uid://qwwidd5peaqv"]
+[gd_scene load_steps=10 format=3 uid="uid://qwwidd5peaqv"]
 
-[ext_resource type="Texture2D" uid="uid://d0jk1lari7knv" path="res://Assets/Libraries/Sprout Lands - Sprites - Basic pack/Characters/Basic Charakter Spritesheet.png" id="1_ru4t2"]
 [ext_resource type="Script" path="res://Characters/character_body_2d.gd" id="1_xmyk5"]
+[ext_resource type="Texture2D" uid="uid://b0war7kffgb1l" path="res://Assets/Personals/blop.png" id="2_p5mmp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_csa8b"]
 size = Vector2(13, 6)
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_nsafy"]
+min_space = Vector2(-1, -1.1)
+max_space = Vector2(1, 1.1)
+blend_mode = 1
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_dfgiy"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_uk2xq"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_yj0b6"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_vmdwn"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_vqt2d"]
+states/Idle/node = SubResource("AnimationNodeBlendSpace2D_nsafy")
+states/Idle/position = Vector2(342, 66)
+states/Walk/node = SubResource("AnimationNodeBlendSpace2D_dfgiy")
+states/Walk/position = Vector2(559, 88)
+transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_uk2xq"), "Idle", "Walk", SubResource("AnimationNodeStateMachineTransition_yj0b6"), "Walk", "Idle", SubResource("AnimationNodeStateMachineTransition_vmdwn")]
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_xmyk5")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_ru4t2")
+texture = ExtResource("2_p5mmp")
 hframes = 4
 vframes = 4
+frame = 12
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 6)
 shape = SubResource("RectangleShape2D_csa8b")
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource("AnimationNodeStateMachine_vqt2d")
+anim_player = NodePath("AnimationPlayer")
+parameters/Idle/blend_position = Vector2(-0.00116688, 1.02979)
+parameters/Walk/blend_position = Vector2(0, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="AnimationTree"]
+root_node = NodePath("../..")

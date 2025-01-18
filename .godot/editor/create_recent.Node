@@ -1,4 +1,9 @@
+AnimationPlayer
+AnimationTree
+Button
+Label
 Panel
+Control
 RichTextLabel
 RemoteTransform2D
 Camera2D
