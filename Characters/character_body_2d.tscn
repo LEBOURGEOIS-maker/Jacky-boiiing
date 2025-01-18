@@ -1,6 +1,5 @@
-[gd_scene load_steps=28 format=3 uid="uid://qwwidd5peaqv"]
+[gd_scene load_steps=27 format=3 uid="uid://qwwidd5peaqv"]
 
-[ext_resource type="Script" path="res://Characters/character_body_2d.gd" id="1_xmyk5"]
 [ext_resource type="Texture2D" uid="uid://b0war7kffgb1l" path="res://Assets/Personals/blop.png" id="2_p5mmp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_csa8b"]
@@ -235,7 +234,6 @@ states/Walk/position = Vector2(559, 88)
 transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_uk2xq"), "Walk", "Idle", SubResource("AnimationNodeStateMachineTransition_vmdwn"), "Idle", "Walk", SubResource("AnimationNodeStateMachineTransition_0wea5")]
 
 [node name="Player" type="CharacterBody2D"]
-script = ExtResource("1_xmyk5")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_p5mmp")
