@@ -17,6 +17,11 @@ var elapsed_time : float = 0  # Track elapsed time
 @onready var timer_panel = get_parent().get_node("UI/TimerPanel")  # Panel where the timer will be shown
 @onready var timer_label = timer_panel.get_node("Label")  
 
+# Variables pour l'inversion des déplacements
+var x_inverted = false
+var y_inverted = false
+var beer_drunk = false  # Etat pour savoir si la bière a été bue
+
 func _ready():
 	
 	if timer_panel:
@@ -51,6 +56,22 @@ func _ready():
 			else:
 				print("TileMap found successfully!")
 
+# Fonction pour boire la bière
+func drink_beer():
+	beer_drunk = true
+	print("Beer drunk, random movement inversion triggered.")
+
+# Fonction pour gérer l'effet de la bière et l'inversion des déplacements
+func process_beer_effect():
+	if beer_drunk:
+		# Randomly decide to invert X and Y directions with 50% chance
+		if randf() < 0.5:
+			x_inverted = !x_inverted
+		if randf() < 0.5:
+			y_inverted = !y_inverted
+		beer_drunk = false  # Reset after effect
+		print("Inversion applied - X: ", x_inverted, ", Y: ", y_inverted)
+
 func _process(_delta):
 	if is_game_over:
 		return  # Si le jeu est perdu, empêcher tout mouvement
@@ -65,6 +86,9 @@ func _process(_delta):
 
 	if is_in_empty_zone():
 		show_lose_message()
+
+	# Appliquer les effets de la bière si elle a été bue
+	process_beer_effect()
 
 func is_in_empty_zone() -> bool:
 	if tilemap == null:
@@ -115,8 +139,18 @@ func _physics_process(_delta):
 	
 	# Update des animations et des mouvements
 	update_animation_parameters(input_direction)
+
+	# Appliquer les inversions sur les déplacements X et Y
+	if x_inverted:
+		input_direction.x = -input_direction.x
+	if y_inverted:
+		input_direction.y = -input_direction.y
+
+	# Appliquer la vitesse et effectuer le déplacement
 	velocity = input_direction * move_speed
 	move_and_slide()
+
+	# Choisir l'état d'animation en fonction du mouvement
 	pick_new_state()
 
 func update_animation_parameters(move_input : Vector2):
@@ -129,3 +163,13 @@ func pick_new_state():
 		state_machine.travel("Walk")
 	else:
 		state_machine.travel("Idle")
+
+
+func _on_beer_2_mouse_entered() -> void:
+	print("ça drink")
+	drink_beer()
+
+
+func _on_area_2d_2_body_entered(body: Node2D) -> void:
+	print("ça drink ici")
+	drink_beer()

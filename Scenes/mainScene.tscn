@@ -1,5 +1,6 @@
-[gd_scene load_steps=10 format=4 uid="uid://b2y48jmww6633"]
+[gd_scene load_steps=13 format=4 uid="uid://b2y48jmww6633"]
 
+[ext_resource type="Script" path="res://Scenes/main_scene.gd" id="1_aq7at"]
 [ext_resource type="PackedScene" uid="uid://qwwidd5peaqv" path="res://Characters/character_body_2d.tscn" id="1_tq50b"]
 [ext_resource type="Texture2D" uid="uid://dj7j26n7ciu5" path="res://Assets/Libraries/Sprout Lands - Sprites - Basic pack/Tilesets/Grass.png" id="2_7adly"]
 [ext_resource type="Script" path="res://Characters/player.gd" id="2_hv1rr"]
@@ -9,6 +10,9 @@
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wr5d2"]
 bg_color = Color(0.155485, 0.167241, 0.387745, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jgk3i"]
+bg_color = Color(0.734342, 0.548435, 0.516495, 1)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nshra"]
 texture = ExtResource("2_7adly")
@@ -87,7 +91,11 @@ texture = ExtResource("2_7adly")
 [sub_resource type="TileSet" id="TileSet_vgcvj"]
 sources/0 = SubResource("TileSetAtlasSource_nshra")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ggebb"]
+size = Vector2(8, 30.5)
+
 [node name="GameLevel" type="Node2D"]
+script = ExtResource("1_aq7at")
 
 [node name="Player" parent="." instance=ExtResource("1_tq50b")]
 script = ExtResource("2_hv1rr")
@@ -150,27 +158,21 @@ offset_bottom = 29.0
 vertical_alignment = 1
 
 [node name="PanelGagner" type="Panel" parent="UI"]
-offset_left = 43.0
-offset_top = -212.0
-offset_right = 274.0
-offset_bottom = -100.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_wr5d2")
+offset_left = 40.0
+offset_top = -216.0
+offset_right = 271.0
+offset_bottom = -104.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_jgk3i")
 
 [node name="Label" type="Label" parent="UI/PanelGagner"]
 layout_mode = 0
-offset_left = 90.0
-offset_top = 11.0
-offset_right = 141.0
-offset_bottom = 34.0
-horizontal_alignment = 1
-vertical_alignment = 1
+offset_right = 40.0
+offset_bottom = 23.0
 
 [node name="NextLevelButton" type="Button" parent="UI/PanelGagner"]
 layout_mode = 0
-offset_left = -40.0
-offset_top = 216.0
-offset_right = -32.0
-offset_bottom = 224.0
+offset_right = 8.0
+offset_bottom = 8.0
 script = ExtResource("5_55500")
 
 [node name="TileMap" type="TileMapLayer" parent="."]
@@ -184,17 +186,47 @@ wait_time = 5.0
 [node name="beer" parent="." instance=ExtResource("6_o4cu3")]
 position = Vector2(-31, 46)
 
+[node name="Area2D2" type="Area2D" parent="beer"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="beer/Area2D2"]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_ggebb")
+
 [node name="beer2" parent="." instance=ExtResource("6_o4cu3")]
 position = Vector2(85, 44)
+
+[node name="Area2D2" type="Area2D" parent="beer2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="beer2/Area2D2"]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_ggebb")
 
 [node name="beer3" parent="." instance=ExtResource("6_o4cu3")]
 position = Vector2(104, 17)
 
+[node name="Area2D2" type="Area2D" parent="beer3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="beer3/Area2D2"]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_ggebb")
+
 [node name="beer4" parent="." instance=ExtResource("6_o4cu3")]
 position = Vector2(84, -18)
 
+[node name="Area2D2" type="Area2D" parent="beer4"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="beer4/Area2D2"]
+position = Vector2(1, -0.25)
+shape = SubResource("RectangleShape2D_ggebb")
+
 [node name="beer5" parent="." instance=ExtResource("6_o4cu3")]
 position = Vector2(51, -42)
+
+[node name="Area2D2" type="Area2D" parent="beer5"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="beer5/Area2D2"]
+position = Vector2(0.5, -0.5)
+shape = SubResource("RectangleShape2D_ggebb")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -205,3 +237,9 @@ offset_bottom = 23.0
 [node name="Sprite2D" type="Sprite2D" parent="."]
 
 [connection signal="pressed" from="UI/PanelPerdu/RetryButton" to="UI/PanelPerdu/RetryButton" method="_on_pressed"]
+[connection signal="body_entered" from="beer/Area2D2" to="Player" method="_on_area_2d_2_body_entered"]
+[connection signal="mouse_entered" from="beer2" to="Player" method="_on_beer_2_mouse_entered"]
+[connection signal="body_entered" from="beer2/Area2D2" to="Player" method="_on_area_2d_2_body_entered"]
+[connection signal="body_entered" from="beer3/Area2D2" to="Player" method="_on_area_2d_2_body_entered"]
+[connection signal="body_entered" from="beer4/Area2D2" to="Player" method="_on_area_2d_2_body_entered"]
+[connection signal="body_entered" from="beer5/Area2D2" to="Player" method="_on_area_2d_2_body_entered"]

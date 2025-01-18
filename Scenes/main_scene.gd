@@ -5,12 +5,11 @@ var staticbody_instance : StaticBody2D
 var key_count = 0
 @onready var panelGagner = $UI/PanelGagner
 var next_level_button : Button
-var movement_enabled = true  # Variable to control character movement
+var movement_enabled = true  
 
 func _ready():
 	update_key_count_display()
-	panelGagner.visible = false  # Assurez-vous que le panneau "Perdu" est caché au départ
-	
+	panelGagner.visible = false
 	
 func update_key_count_display():
 	$CanvasLayer/KeyCounterLabel.text = " Score: %d / 5" % key_count
@@ -38,22 +37,28 @@ func _on_next_level_button_pressed():
 	print("Moving to the next level...")
 	get_tree().change_scene("res://Scenes/menu_scene.tscn")  # Update with the correct path to the next scene
 
-
 func show_win_popup():
-	# Afficher le panneau "Perdu"
 	panelGagner.visible = true
-	
-	# Débogage : Affiche des informations sur le panneau
 	print("Panel found. Making it visible.")
 	print("Panel visibility set to: ", panelGagner.visible)
-	print("Panel position: ", panelGagner.position)
-	
-	# Placer le panneau dans le coin supérieur droit
-	var screen_size = get_viewport().size  # Taille de l'écran (viewport)
-	# Calculer la position pour placer le panneau dans le coin supérieur droit
-	panelGagner.position = Vector2(screen_size.x - panelGagner.rect_min_size.x, 0)  # Corner position (top-right)
-	panelGagner.z_index = 10  # Mettre le panneau au-dessus des autres éléments
-	print("Panel position updated to: ", panelGagner.position)  # Debug : afficher la nouvelle position du panneau
-	
-	# Désactiver les contrôles après affichage du message
-	set_process(false)  # Arrêter les mises à jour après l'affichage du message
+
+	var screen_size = get_viewport().size  # Get the viewport size
+	var panel_size = panelGagner.get_size()  # Get the actual size of the panel
+
+	# Debug: print the size of the panel and screen size
+	print("Screen size:", screen_size)
+	print("Panel size:", panel_size)
+
+	# Calculate the position to place it in the top-right corner
+	var x_position = screen_size.x - panel_size.x  # Align to the right
+	var y_position = 0  # Align to the top
+
+	# Debug: print the calculated position
+	print("Calculated position: ", Vector2(x_position, y_position))
+
+	# Set the position of the panel
+	panelGagner.position = Vector2(x_position, y_position)
+	panelGagner.z_index = 10  # Ensure it appears above other elements
+
+	# Disable character controls
+	set_process(false)
