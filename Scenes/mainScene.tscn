@@ -1,6 +1,5 @@
-[gd_scene load_steps=12 format=4 uid="uid://b2y48jmww6633"]
+[gd_scene load_steps=10 format=4 uid="uid://b2y48jmww6633"]
 
-[ext_resource type="Script" path="res://Scenes/main_scene.gd" id="1_aq7at"]
 [ext_resource type="PackedScene" uid="uid://qwwidd5peaqv" path="res://Characters/character_body_2d.tscn" id="1_tq50b"]
 [ext_resource type="Texture2D" uid="uid://dj7j26n7ciu5" path="res://Assets/Libraries/Sprout Lands - Sprites - Basic pack/Tilesets/Grass.png" id="2_7adly"]
 [ext_resource type="Script" path="res://Characters/player.gd" id="2_hv1rr"]
@@ -10,9 +9,6 @@
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wr5d2"]
 bg_color = Color(0.155485, 0.167241, 0.387745, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jgk3i"]
-bg_color = Color(0.734342, 0.548435, 0.516495, 1)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nshra"]
 texture = ExtResource("2_7adly")
@@ -92,7 +88,6 @@ texture = ExtResource("2_7adly")
 sources/0 = SubResource("TileSetAtlasSource_nshra")
 
 [node name="GameLevel" type="Node2D"]
-script = ExtResource("1_aq7at")
 
 [node name="Player" parent="." instance=ExtResource("1_tq50b")]
 script = ExtResource("2_hv1rr")
@@ -155,21 +150,27 @@ offset_bottom = 29.0
 vertical_alignment = 1
 
 [node name="PanelGagner" type="Panel" parent="UI"]
-offset_left = 40.0
-offset_top = -216.0
-offset_right = 271.0
-offset_bottom = -104.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_jgk3i")
+offset_left = 43.0
+offset_top = -212.0
+offset_right = 274.0
+offset_bottom = -100.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_wr5d2")
 
 [node name="Label" type="Label" parent="UI/PanelGagner"]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+offset_left = 90.0
+offset_top = 11.0
+offset_right = 141.0
+offset_bottom = 34.0
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="NextLevelButton" type="Button" parent="UI/PanelGagner"]
 layout_mode = 0
-offset_right = 8.0
-offset_bottom = 8.0
+offset_left = -40.0
+offset_top = 216.0
+offset_right = -32.0
+offset_bottom = 224.0
 script = ExtResource("5_55500")
 
 [node name="TileMap" type="TileMapLayer" parent="."]

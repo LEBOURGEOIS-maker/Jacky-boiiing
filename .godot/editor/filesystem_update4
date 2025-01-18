@@ -1,10 +1,7 @@
 res://Scenes/mainScene.tscn
-res://Characters/character_body_2d.tscn
 res://Scenes/mainMenu.tscn
 res://Scenes/credits.tscn
-res://Characters/player.gd
-res://beer.gd
-res://Scenes/main_scene.gd
 res://Scenes/beer.tscn
-res://Scripts/main_scene.gd
-res://Scenes/next_level_button.gd
+res://Characters/player.gd
+res://Scenes/main_scene.gd
+res://beer.gd
