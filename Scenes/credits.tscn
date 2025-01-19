@@ -4,6 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://bopi3hl1hd56c" path="res://Assets/Personals/backgroundCredits.png" id="2_iaman"]
 
 [sub_resource type="FontFile" id="FontFile_uogbb"]
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
 cache/0/25/0/ascent = 0.0
 cache/0/25/0/descent = 0.0
 cache/0/25/0/underline_position = 0.0

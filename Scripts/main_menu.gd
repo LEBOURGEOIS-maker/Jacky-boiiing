@@ -6,9 +6,9 @@ extends Control
 # Fonction pour démarrer une nouvelle partie
 func _on_nouvelle_partie_button_go_to_game() -> void:
 	# Ajouter la scène actuelle à la pile via NavigationManager pour pouvoir revenir en arrière
-	NavigationManager.add_scene_to_stack("res://Scenes/niveau1.tscn")
+	NavigationManager.add_scene_to_stack("res://Scenes/mainMenu.tscn")
 	# Changer la scène pour la scène de jeu
-	get_tree().change_scene_to_file("res://Scenes/niveau1.tscn")
+	get_tree().change_scene_to_file("res://Scenes/newGame.tscn")
 
 # Fonction pour afficher les crédits
 func _on_credits_button_credits() -> void:

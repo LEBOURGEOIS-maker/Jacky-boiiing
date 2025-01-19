@@ -4,6 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://bopi3hl1hd56c" path="res://Assets/Personals/backgroundCredits.png" id="2_brypx"]
 
 [sub_resource type="FontFile" id="FontFile_djvog"]
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
 cache/0/25/0/ascent = 0.0
 cache/0/25/0/descent = 0.0
 cache/0/25/0/underline_position = 0.0
@@ -81,15 +84,10 @@ offset_top = 81.0
 offset_right = 415.0
 offset_bottom = 249.0
 
-[node name="Niveau1" type="Button" parent="Background/Titre/VBoxContainer"]
+[node name="NouvellePartie" type="Button" parent="Background/Titre/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 23
-text = "Niveau1"
-
-[node name="Niveau2" type="Button" parent="Background/Titre/VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 23
-text = "Niveau2"
+text = "Nouvelle Partie"
 
 [node name="Credits" type="Button" parent="Background/Titre/VBoxContainer"]
 layout_mode = 2
@@ -109,7 +107,6 @@ autoplay = true
 position = Vector2(1057, 228)
 zoom = Vector2(0.4, 0.4)
 
-[connection signal="button_down" from="Background/Titre/VBoxContainer/Niveau1" to="." method="_on_nouvelle_partie_button_go_to_game"]
-[connection signal="button_down" from="Background/Titre/VBoxContainer/Niveau2" to="." method="_on_nouvelle_partie_button_go_to_game"]
+[connection signal="button_down" from="Background/Titre/VBoxContainer/NouvellePartie" to="." method="_on_nouvelle_partie_button_go_to_game"]
 [connection signal="button_down" from="Background/Titre/VBoxContainer/Credits" to="." method="_on_credits_button_credits"]
 [connection signal="button_down" from="Background/Titre/VBoxContainer/Quitter" to="." method="_on_quitter_button_down_quit"]

@@ -1,5 +1,6 @@
-res://Scenes/mainScene.tscn
+res://Scenes/newGame.tscn
+res://Scenes/new_game.gd
 res://Scenes/mainMenu.tscn
 res://Scenes/credits.tscn
 res://Scenes/beer.tscn
-res://Characters/player.gd
+res://Scenes/xxxxxx.tscn
