@@ -19,7 +19,7 @@ func add_key():
 	update_key_count_display()
 	print("Key count:", key_count)
 	
-	if key_count == 1:
+	if key_count == 5:
 		print("Show win panel.")
 		show_win_popup()
 
@@ -35,8 +35,7 @@ func _process(delta):
 
 func _on_next_level_button_pressed():
 	print("Moving to the next level...")
-	get_tree().change_scene("res://Scenes/niveau2.tscn")  # Remplace avec le bon chemin de la scène suivante
-
+	get_tree().change_scene_to_file("res://Scenes/niveau2.tscn")
 func show_win_popup():
 	panelGagner.visible = true
 	print("Panel found. Making it visible.")  # Debug : le panneau est trouvé
@@ -71,7 +70,7 @@ func show_win_popup():
 	print("Calculated Panel position: ", Vector2(x_position, y_position))  # Debug de la position calculée
 
 	# Positionner le panneau
-	panelGagner.position = Vector2(x_position + 200, y_position + 150)
+	panelGagner.position = Vector2(x_position, y_position + 50)
 
 	# Assurez-vous que le panneau soit au-dessus des autres éléments
 	panelGagner.z_index = 10  # On place le panneau en haut des autres éléments UI
@@ -82,3 +81,7 @@ func show_win_popup():
 
 	# Désactiver les contrôles du personnage
 	set_process(false)
+
+
+func _on_next_level_button_pressed_mainMenu() -> void:
+	get_tree().change_scene_to_file("res://Scenes/mainMenu.tscn")

@@ -1,10 +1,9 @@
-[gd_scene load_steps=15 format=4 uid="uid://53bej6d5owib"]
+[gd_scene load_steps=14 format=4 uid="uid://53bej6d5owib"]
 
-[ext_resource type="Script" path="res://Scenes/main_scene.gd" id="1_0nqk5"]
+[ext_resource type="Script" path="res://Scenes/niveau_2.gd" id="1_rxnqa"]
 [ext_resource type="PackedScene" uid="uid://qwwidd5peaqv" path="res://Characters/character_body_2d.tscn" id="2_h1xlg"]
-[ext_resource type="Script" path="res://Characters/player.gd" id="3_oqgft"]
+[ext_resource type="Script" path="res://Characters/character_body_2d_level2.gd" id="3_fb86x"]
 [ext_resource type="Script" path="res://Scripts/looseAndRetry.gd" id="4_lyxc2"]
-[ext_resource type="Script" path="res://Scenes/next_level_button.gd" id="5_5fgb5"]
 [ext_resource type="Texture2D" uid="uid://dj7j26n7ciu5" path="res://Assets/Libraries/Sprout Lands - Sprites - Basic pack/Tilesets/Grass.png" id="6_8lgka"]
 [ext_resource type="Texture2D" uid="uid://u0dslygj4bey" path="res://Assets/Personals/Tilesetv3.png" id="7_ugboj"]
 [ext_resource type="PackedScene" uid="uid://bnclgwkqmdeli" path="res://Scenes/beer.tscn" id="8_iro47"]
@@ -118,10 +117,10 @@ sources/1 = SubResource("TileSetAtlasSource_num5l")
 size = Vector2(8.25, 29.625)
 
 [node name="GameLevel" type="Node2D"]
-script = ExtResource("1_0nqk5")
+script = ExtResource("1_rxnqa")
 
 [node name="Player" parent="." instance=ExtResource("2_h1xlg")]
-script = ExtResource("3_oqgft")
+script = ExtResource("3_fb86x")
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
 remote_path = NodePath("../Camera2D")
@@ -188,8 +187,8 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -115.5
 offset_top = -56.0
-offset_right = 115.5
-offset_bottom = 56.0
+offset_right = 84.5
+offset_bottom = 2.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_jgk3i")
@@ -205,8 +204,7 @@ theme_override_font_sizes/font_size = 11
 
 [node name="NextLevelButton" type="Button" parent="UI/PanelGagner/BoxContainer"]
 layout_mode = 2
-text = "Niveau 2"
-script = ExtResource("5_5fgb5")
+text = "Retour au menu"
 
 [node name="TileMap" type="TileMapLayer" parent="."]
 z_index = -5
@@ -268,10 +266,8 @@ shape = SubResource("RectangleShape2D_ggebb")
 offset_right = 40.0
 offset_bottom = 23.0
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-
 [connection signal="pressed" from="UI/PanelPerdu/RetryButton" to="UI/PanelPerdu/RetryButton" method="_on_pressed"]
-[connection signal="pressed" from="UI/PanelGagner/BoxContainer/NextLevelButton" to="." method="_on_next_level_button_pressed"]
+[connection signal="pressed" from="UI/PanelGagner/BoxContainer/NextLevelButton" to="." method="_on_next_level_button_pressed_mainMenu"]
 [connection signal="body_entered" from="beer/Area2D2" to="Player" method="_on_area_2d_2_body_entered"]
 [connection signal="mouse_entered" from="beer2" to="Player" method="_on_beer_2_mouse_entered"]
 [connection signal="body_entered" from="beer2/Area2D2" to="Player" method="_on_area_2d_2_body_entered"]

@@ -1,78 +1,80 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1737283009
-beer.gd::GDScript::-1::1737282978::0::1::::<>StaticBody2D<>::
-icon.svg::CompressedTexture2D::5040780144038828195::1737282978::1737283009::1::::<><>::
-::res://Assets/::1737282985
-::res://Assets/Libraries/::1737282983
-::res://Assets/Libraries/Sprout Lands - Sprites - Basic pack/::1737282984
-read_me.txt::TextFile::-1::1737282983::0::1::::<><>::
-::res://Assets/Libraries/Sprout Lands - Sprites - Basic pack/Characters/::1737283010
-Basic Charakter Actions.png::CompressedTexture2D::3885757705655504478::1737282983::1737283009::1::::<><>::
-Basic Charakter Spritesheet.png::CompressedTexture2D::8933216720927056919::1737282983::1737283009::1::::<><>::
-Egg_And_Nest.png::CompressedTexture2D::718563600186243799::1737282983::1737283009::1::::<><>::
-Free Chicken Sprites.png::CompressedTexture2D::1703326195003135371::1737282983::1737283009::1::::<><>::
-Free Cow Sprites.png::CompressedTexture2D::6933871878880533903::1737282983::1737283009::1::::<><>::
-Tools.png::CompressedTexture2D::3409965693910905048::1737282983::1737283010::1::::<><>::
-::res://Assets/Libraries/Sprout Lands - Sprites - Basic pack/Objects/::1737283010
-Basic_Furniture.png::CompressedTexture2D::2526135894442853681::1737282983::1737283010::1::::<><>::
-Basic_Grass_Biom_things.png::CompressedTexture2D::7638767555118072620::1737282983::1737283010::1::::<><>::
-Basic_Plants.png::CompressedTexture2D::3920787856861401603::1737282983::1737283010::1::::<><>::
-Basic_tools_and_meterials.png::CompressedTexture2D::5352116539194908839::1737282983::1737283010::1::::<><>::
-Chest.png::CompressedTexture2D::1317165737646880705::1737282984::1737283010::1::::<><>::
-Egg_item.png::CompressedTexture2D::1444955617981205914::1737282984::1737283010::1::::<><>::
-Free_Chicken_House.png::CompressedTexture2D::8137393181777151402::1737282984::1737283010::1::::<><>::
-Paths.png::CompressedTexture2D::4517552151078998373::1737282984::1737283010::1::::<><>::
-Simple_Milk_and_grass_item.png::CompressedTexture2D::7189814597410796961::1737282984::1737283010::1::::<><>::
-Wood_Bridge.png::CompressedTexture2D::6869636131215931333::1737282984::1737283010::1::::<><>::
-::res://Assets/Libraries/Sprout Lands - Sprites - Basic pack/Sprout Lands color pallet/::1737283010
-Sprout Lands defautlt palette snip.PNG::CompressedTexture2D::3358736196047393394::1737282984::1737283010::1::::<><>::
-Sprout Lands defautlt palette.png::CompressedTexture2D::7082896922984616260::1737282984::1737283010::1::::<><>::
-::res://Assets/Libraries/Sprout Lands - Sprites - Basic pack/Tilesets/::1737283010
-Bitmask references 1.png::CompressedTexture2D::6719685637566880294::1737282984::1737283010::1::::<><>::
-Bitmask references 2.png::CompressedTexture2D::7198767280106111081::1737282984::1737283010::1::::<><>::
-Doors.png::CompressedTexture2D::4028137989951456379::1737282984::1737283010::1::::<><>::
-Fences.png::CompressedTexture2D::6374220789156858061::1737282984::1737283009::1::::<><>::
-Grass.png::CompressedTexture2D::231106413267208662::1737282984::1737283009::1::::<><>::
-Hills.png::CompressedTexture2D::4167643232447177185::1737282984::1737283009::1::::<><>::
-tilesetPerso2.png::CompressedTexture2D::2524833006962872739::1737282984::1737283009::1::::<><>::
-tilesetPerso3.png::CompressedTexture2D::7132765296937952092::1737282985::1737283009::1::::<><>::
-tilesetPerso.png::CompressedTexture2D::5275376190497457025::1737282984::1737283009::1::::<><>::
-Tilled_Dirt.png::CompressedTexture2D::1892326928292151482::1737282984::1737283009::1::::<><>::
-Tilled_Dirt_v2.png::CompressedTexture2D::1783826020560978046::1737282984::1737283009::1::::<><>::
-Tilled_Dirt_Wide.png::CompressedTexture2D::8943342685572922781::1737282984::1737283009::1::::<><>::
-Tilled_Dirt_Wide_v2.png::CompressedTexture2D::1489837947702657262::1737282984::1737283009::1::::<><>::
-Water.png::CompressedTexture2D::5141681440650421171::1737282984::1737283009::1::::<><>::
-Wooden_House_Roof_Tilset.png::CompressedTexture2D::5887304322505982921::1737282984::1737283009::1::::<><>::
-Wooden_House_Walls_Tilset.png::CompressedTexture2D::5281794987368172071::1737282984::1737283009::1::::<><>::
-::res://Assets/Personals/::1737283010
-backgroundCredits.png::CompressedTexture2D::3400566284955048480::1737282985::1737283010::1::::<><>::
-beer.png::CompressedTexture2D::3525841047991901038::1737282985::1737283009::1::::<><>::
-blop.png::CompressedTexture2D::4186590140158954403::1737282985::1737283009::1::::<><>::
-Tileset.png::CompressedTexture2D::6565161846745136204::1737282985::1737283010::1::::<><>::
-Tilesetv3.png::CompressedTexture2D::1455601226998667868::1737282985::1737283009::1::::<><>::
-wallpaperMenu.jpg::CompressedTexture2D::6396564374577797801::1737282985::1737283010::1::::<><>::
-::res://Characters/::1737282985
-character_body_2d.gd::GDScript::-1::1737282985::0::1::::<>CharacterBody2D<>::
-character_body_2d.tscn::PackedScene::1169788032577663813::1737282985::0::1::::<><>::uid://b0war7kffgb1l::::res://Assets/Personals/blop.png
-player.gd::GDScript::-1::1737282985::0::1::::<>CharacterBody2D<>::
-::res://Musics/::1737283010
-boing.wav::AudioStreamWAV::5019865207263095436::1737282985::1737283010::1::::<><>::
-gamer.wav::AudioStreamWAV::9202150544079030964::1737282985::1737283010::1::::<><>::
-menu.wav::AudioStreamWAV::2196556413276108588::1737282985::1737283010::1::::<><>::
-::res://Scenes/::1737283212
-backToMenu.gd::GDScript::-1::1737282985::0::1::::<>Control<>::
-beer.tscn::PackedScene::3303684179884375142::1737283212::0::1::::<><>::res://beer.gd<>uid://bqh7c7qv26hak::::res://Assets/Personals/beer.png
-credits.tscn::PackedScene::6240449478670156419::1737283212::0::1::::<><>::res://Scenes/backToMenu.gd<>uid://bopi3hl1hd56c::::res://Assets/Personals/backgroundCredits.png
-mainMenu.tscn::PackedScene::3162504220099872155::1737283212::0::1::::<><>::uid://buixixkvcpvmr::::res://Scenes/xxxxxx.tscn
-main_scene.gd::GDScript::-1::1737282985::0::1::::<>Node2D<>::
-next_level_button.gd::GDScript::-1::1737282985::0::1::::<>Button<>::
-niveau1.tscn::PackedScene::4332884744284537320::1737282985::0::1::::<><>::res://Scenes/main_scene.gd<>uid://qwwidd5peaqv::::res://Characters/character_body_2d.tscn<>res://Characters/player.gd<>res://Scripts/looseAndRetry.gd<>res://Scenes/next_level_button.gd<>uid://dj7j26n7ciu5::::res://Assets/Libraries/Sprout Lands - Sprites - Basic pack/Tilesets/Grass.png<>uid://u0dslygj4bey::::res://Assets/Personals/Tilesetv3.png<>uid://bnclgwkqmdeli::::res://Scenes/beer.tscn
-niveau2.tscn::PackedScene::2163536267199091801::1737283342::0::1::::<><>::res://Scenes/main_scene.gd<>uid://qwwidd5peaqv::::res://Characters/character_body_2d.tscn<>res://Characters/player.gd<>res://Scripts/looseAndRetry.gd<>res://Scenes/next_level_button.gd<>uid://dj7j26n7ciu5::::res://Assets/Libraries/Sprout Lands - Sprites - Basic pack/Tilesets/Grass.png<>uid://u0dslygj4bey::::res://Assets/Personals/Tilesetv3.png<>uid://bnclgwkqmdeli::::res://Scenes/beer.tscn
-rich_text_label.gd::GDScript::-1::1737282985::0::1::::<>RefCounted<>::
-xxxxxx.tscn::PackedScene::3808124580113623093::1737282985::0::1::::<><>::res://Scripts/main_menu.gd<>uid://bopi3hl1hd56c::::res://Assets/Personals/backgroundCredits.png
-::res://Scripts/::1737282985
-backToMenu.gd::GDScript::-1::1737282985::0::1::::<>Control<>::
-looseAndRetry.gd::GDScript::-1::1737282985::0::1::::<>Button<>::
-main_menu.gd::GDScript::-1::1737282985::0::1::::<>Control<>::
-main_scene.gd::GDScript::-1::1737282985::0::1::::<>Node2Ddz<>::
-navigationManager.gd::GDScript::-1::1737282985::0::1::::<>Node<>::
+::res://::1737285639
+beer.gd::GDScript::-1::1737241353::0::1::::<>StaticBody2D<>::
+icon.svg::CompressedTexture2D::5040780144038828195::1737241353::1737283843::1::::<><>::
+::res://Assets/::1737241353
+::res://Assets/Libraries/::1737241353
+::res://Assets/Libraries/Sprout Lands - Sprites - Basic pack/::1737241353
+read_me.txt::TextFile::-1::1737241353::0::1::::<><>::
+::res://Assets/Libraries/Sprout Lands - Sprites - Basic pack/Characters/::1737283843
+Basic Charakter Actions.png::CompressedTexture2D::3885757705655504478::1737241353::1737283843::1::::<><>::
+Basic Charakter Spritesheet.png::CompressedTexture2D::8933216720927056919::1737241353::1737283843::1::::<><>::
+Egg_And_Nest.png::CompressedTexture2D::718563600186243799::1737241353::1737283843::1::::<><>::
+Free Chicken Sprites.png::CompressedTexture2D::1703326195003135371::1737241353::1737283843::1::::<><>::
+Free Cow Sprites.png::CompressedTexture2D::6933871878880533903::1737241353::1737283843::1::::<><>::
+Tools.png::CompressedTexture2D::3409965693910905048::1737241353::1737283843::1::::<><>::
+::res://Assets/Libraries/Sprout Lands - Sprites - Basic pack/Objects/::1737283843
+Basic_Furniture.png::CompressedTexture2D::2526135894442853681::1737241353::1737283843::1::::<><>::
+Basic_Grass_Biom_things.png::CompressedTexture2D::7638767555118072620::1737241353::1737283843::1::::<><>::
+Basic_Plants.png::CompressedTexture2D::3920787856861401603::1737241353::1737283843::1::::<><>::
+Basic_tools_and_meterials.png::CompressedTexture2D::5352116539194908839::1737241353::1737283843::1::::<><>::
+Chest.png::CompressedTexture2D::1317165737646880705::1737241353::1737283843::1::::<><>::
+Egg_item.png::CompressedTexture2D::1444955617981205914::1737241353::1737283843::1::::<><>::
+Free_Chicken_House.png::CompressedTexture2D::8137393181777151402::1737241353::1737283843::1::::<><>::
+Paths.png::CompressedTexture2D::4517552151078998373::1737241353::1737283843::1::::<><>::
+Simple_Milk_and_grass_item.png::CompressedTexture2D::7189814597410796961::1737241353::1737283843::1::::<><>::
+Wood_Bridge.png::CompressedTexture2D::6869636131215931333::1737241353::1737283843::1::::<><>::
+::res://Assets/Libraries/Sprout Lands - Sprites - Basic pack/Sprout Lands color pallet/::1737283843
+Sprout Lands defautlt palette snip.PNG::CompressedTexture2D::3358736196047393394::1737241353::1737283843::1::::<><>::
+Sprout Lands defautlt palette.png::CompressedTexture2D::7082896922984616260::1737241353::1737283843::1::::<><>::
+::res://Assets/Libraries/Sprout Lands - Sprites - Basic pack/Tilesets/::1737283843
+Bitmask references 1.png::CompressedTexture2D::6719685637566880294::1737241353::1737283843::1::::<><>::
+Bitmask references 2.png::CompressedTexture2D::7198767280106111081::1737241353::1737283843::1::::<><>::
+Doors.png::CompressedTexture2D::4028137989951456379::1737241353::1737283843::1::::<><>::
+Fences.png::CompressedTexture2D::6374220789156858061::1737241353::1737283843::1::::<><>::
+Grass.png::CompressedTexture2D::231106413267208662::1737241353::1737283843::1::::<><>::
+Hills.png::CompressedTexture2D::4167643232447177185::1737241353::1737283843::1::::<><>::
+tilesetPerso2.png::CompressedTexture2D::2524833006962872739::1737241353::1737283843::1::::<><>::
+tilesetPerso3.png::CompressedTexture2D::7132765296937952092::1737241353::1737283843::1::::<><>::
+tilesetPerso.png::CompressedTexture2D::5275376190497457025::1737241353::1737283843::1::::<><>::
+Tilled_Dirt.png::CompressedTexture2D::1892326928292151482::1737241353::1737283843::1::::<><>::
+Tilled_Dirt_v2.png::CompressedTexture2D::1783826020560978046::1737241353::1737283843::1::::<><>::
+Tilled_Dirt_Wide.png::CompressedTexture2D::8943342685572922781::1737241353::1737283843::1::::<><>::
+Tilled_Dirt_Wide_v2.png::CompressedTexture2D::1489837947702657262::1737241353::1737283843::1::::<><>::
+Water.png::CompressedTexture2D::5141681440650421171::1737241353::1737283843::1::::<><>::
+Wooden_House_Roof_Tilset.png::CompressedTexture2D::5887304322505982921::1737241353::1737283843::1::::<><>::
+Wooden_House_Walls_Tilset.png::CompressedTexture2D::5281794987368172071::1737241353::1737283843::1::::<><>::
+::res://Assets/Personals/::1737283843
+backgroundCredits.png::CompressedTexture2D::3400566284955048480::1737281631::1737283843::1::::<><>::
+beer.png::CompressedTexture2D::3525841047991901038::1737241353::1737283843::1::::<><>::
+blop.png::CompressedTexture2D::4186590140158954403::1737241353::1737283843::1::::<><>::
+Tileset.png::CompressedTexture2D::6565161846745136204::1737241353::1737283843::1::::<><>::
+Tilesetv3.png::CompressedTexture2D::1455601226998667868::1737241353::1737283843::1::::<><>::
+wallpaperMenu.jpg::CompressedTexture2D::6396564374577797801::1737241353::1737283843::1::::<><>::
+::res://Characters/::1737278675
+character_body_2d.gd::GDScript::-1::1737241353::0::1::::<>CharacterBody2D<>::
+character_body_2d.tscn::PackedScene::1169788032577663813::1737241353::0::1::::<><>::uid://b0war7kffgb1l::::res://Assets/Personals/blop.png
+player.gd::GDScript::-1::1737278675::0::1::::<>CharacterBody2D<>::
+::res://Musics/::1737285623
+boing.wav::AudioStreamWAV::5019865207263095436::1737236426::1737285622::1::::<><>::
+gamer.wav::AudioStreamWAV::9202150544079030964::1737235941::1737285623::1::::<><>::
+menu.wav::AudioStreamWAV::2196556413276108588::1737236239::1737285622::1::::<><>::
+::res://Scenes/::1737285621
+backToMenu.gd::GDScript::-1::1737280481::0::1::::<>Control<>::
+beer.tscn::PackedScene::3303684179884375142::1737284374::0::1::::<><>::res://beer.gd<>uid://bqh7c7qv26hak::::res://Assets/Personals/beer.png
+credits.tscn::PackedScene::6240449478670156419::1737284374::0::1::::<><>::res://Scenes/backToMenu.gd<>uid://bopi3hl1hd56c::::res://Assets/Personals/backgroundCredits.png
+mainMenu.tscn::PackedScene::3162504220099872155::1737284374::0::1::::<><>::uid://buixixkvcpvmr::::res://Scenes/xxxxxx.tscn
+main_scene.gd::GDScript::-1::1737280375::0::1::::<>Node2D<>::
+newGame.tscn::PackedScene::9048739583715556784::1737284375::0::1::::<><>::uid://bopi3hl1hd56c::::res://Assets/Personals/backgroundCredits.png<>res://Scenes/new_game.gd
+new_game.gd::GDScript::-1::1737284306::0::1::::<>Control<>::
+next_level_button.gd::GDScript::-1::1737241353::0::1::::<>Button<>::
+niveau1.tscn::PackedScene::4332884744284537320::1737282609::0::1::::<><>::res://Scenes/main_scene.gd<>uid://qwwidd5peaqv::::res://Characters/character_body_2d.tscn<>res://Characters/player.gd<>res://Scripts/looseAndRetry.gd<>res://Scenes/next_level_button.gd<>uid://dj7j26n7ciu5::::res://Assets/Libraries/Sprout Lands - Sprites - Basic pack/Tilesets/Grass.png<>uid://u0dslygj4bey::::res://Assets/Personals/Tilesetv3.png<>uid://bnclgwkqmdeli::::res://Scenes/beer.tscn
+niveau2.tscn::PackedScene::2163536267199091801::1737285621::0::1::::<><>::res://Scenes/main_scene.gd<>uid://qwwidd5peaqv::::res://Characters/character_body_2d.tscn<>res://Characters/player.gd<>res://Scripts/looseAndRetry.gd<>res://Scenes/next_level_button.gd<>uid://dj7j26n7ciu5::::res://Assets/Libraries/Sprout Lands - Sprites - Basic pack/Tilesets/Grass.png<>uid://u0dslygj4bey::::res://Assets/Personals/Tilesetv3.png<>uid://bnclgwkqmdeli::::res://Scenes/beer.tscn
+rich_text_label.gd::GDScript::-1::1737281330::0::1::::<>RefCounted<>::
+xxxxxx.tscn::PackedScene::3808124580113623093::1737284374::0::1::::<><>::res://Scripts/main_menu.gd<>uid://bopi3hl1hd56c::::res://Assets/Personals/backgroundCredits.png
+::res://Scripts/::1737284050
+backToMenu.gd::GDScript::-1::1737241353::0::1::::<>Control<>::
+looseAndRetry.gd::GDScript::-1::1737241353::0::1::::<>Button<>::
+main_menu.gd::GDScript::-1::1737284050::0::1::::<>Control<>::
+main_scene.gd::GDScript::-1::1737241353::0::1::::<>Node2Ddz<>::
+navigationManager.gd::GDScript::-1::1737241353::0::1::::<>Node<>::

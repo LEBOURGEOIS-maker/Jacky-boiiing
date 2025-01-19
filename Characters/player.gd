@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 @export var move_speed : float = 100
 @export var starting_direction : Vector2 = Vector2(0,1)
-@export var timer_duration : float = 30  # Set the timer duration in seconds
+@export var timer_duration : float = 70  # Set the timer duration in seconds
 
 @onready var animation_tree = $AnimationTree
 @onready var state_machine = animation_tree.get("parameters/playback")
@@ -41,7 +41,7 @@ func _ready():
 			#label.text = "Timer : "
 
 			# Positionner le panneau à un endroit spécifique
-			timer_panel.position = Vector2(150, 0)  # Position dans la fenêtre
+			timer_panel.position = Vector2(300, 0)  # Position dans la fenêtre
 
 			# Assurez-vous que le panneau soit au-dessus des autres éléments
 			timer_panel.z_index = 10
@@ -131,7 +131,7 @@ func show_lose_message():
 	set_process(false)
 
 
-var propulsion_duration = 0.5  # Durée de la propulsion en secondes
+var propulsion_duration = 0.20  # Durée de la propulsion en secondes
 var propulsion_timer = 0.0  # Compteur pour la durée de propulsion
 var propulsion_velocity = Vector2.ZERO  # Vitesse de propulsion
 

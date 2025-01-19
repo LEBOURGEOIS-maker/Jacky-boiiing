@@ -1,10 +1,9 @@
-[gd_scene load_steps=15 format=4 uid="uid://b2y48jmww6633"]
+[gd_scene load_steps=14 format=4 uid="uid://b2y48jmww6633"]
 
 [ext_resource type="Script" path="res://Scenes/main_scene.gd" id="1_l44a7"]
 [ext_resource type="PackedScene" uid="uid://qwwidd5peaqv" path="res://Characters/character_body_2d.tscn" id="2_hfk1n"]
 [ext_resource type="Script" path="res://Characters/player.gd" id="3_3n4nt"]
 [ext_resource type="Script" path="res://Scripts/looseAndRetry.gd" id="4_32xbw"]
-[ext_resource type="Script" path="res://Scenes/next_level_button.gd" id="5_8ydil"]
 [ext_resource type="Texture2D" uid="uid://dj7j26n7ciu5" path="res://Assets/Libraries/Sprout Lands - Sprites - Basic pack/Tilesets/Grass.png" id="6_er48a"]
 [ext_resource type="Texture2D" uid="uid://u0dslygj4bey" path="res://Assets/Personals/Tilesetv3.png" id="7_c1mgo"]
 [ext_resource type="PackedScene" uid="uid://bnclgwkqmdeli" path="res://Scenes/beer.tscn" id="8_xiuak"]
@@ -188,8 +187,8 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -115.5
 offset_top = -56.0
-offset_right = 115.5
-offset_bottom = 56.0
+offset_right = 84.5
+offset_bottom = 2.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_jgk3i")
@@ -198,6 +197,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_jgk3i")
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
+vertical = true
 
 [node name="Label" type="Label" parent="UI/PanelGagner/BoxContainer"]
 layout_mode = 2
@@ -206,7 +206,6 @@ theme_override_font_sizes/font_size = 11
 [node name="NextLevelButton" type="Button" parent="UI/PanelGagner/BoxContainer"]
 layout_mode = 2
 text = "Niveau 2"
-script = ExtResource("5_8ydil")
 
 [node name="TileMap" type="TileMapLayer" parent="."]
 z_index = -5
@@ -266,8 +265,6 @@ shape = SubResource("RectangleShape2D_ggebb")
 [node name="KeyCounterLabel" type="Label" parent="CanvasLayer"]
 offset_right = 40.0
 offset_bottom = 23.0
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
 
 [connection signal="pressed" from="UI/PanelPerdu/RetryButton" to="UI/PanelPerdu/RetryButton" method="_on_pressed"]
 [connection signal="pressed" from="UI/PanelGagner/BoxContainer/NextLevelButton" to="." method="_on_next_level_button_pressed"]
