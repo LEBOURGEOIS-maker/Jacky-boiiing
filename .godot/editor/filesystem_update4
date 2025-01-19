@@ -2,4 +2,4 @@ res://Scenes/mainScene.tscn
 res://Scenes/mainMenu.tscn
 res://Scenes/credits.tscn
 res://Scenes/beer.tscn
-res://Scenes/main_scene.gd
+res://Characters/player.gd

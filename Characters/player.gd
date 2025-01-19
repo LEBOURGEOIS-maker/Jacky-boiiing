@@ -16,6 +16,7 @@ var elapsed_time : float = 0  # Track elapsed time
 @onready var lose_panel = get_parent().get_node("UI/PanelPerdu")
 @onready var timer_panel = get_parent().get_node("UI/TimerPanel")  # Panel where the timer will be shown
 @onready var timer_label = timer_panel.get_node("Label")  
+@onready var audio_player = $AudioStreamPlayer2  # Reference the AudioStreamPlayer node
 
 # Variables pour l'inversion des déplacements
 var x_inverted = false
@@ -23,6 +24,10 @@ var y_inverted = false
 var beer_drunk = false  # Etat pour savoir si la bière a été bue
 
 func _ready():
+	if not audio_player:
+		push_error("AudioStreamPlayer node not found!")
+	else:
+		print("AudioStreamPlayer is ready.")
 	
 	if timer_panel:
 		print("timer_panel found. Making it visible.")  # Debug : le panneau est trouvé
@@ -160,10 +165,11 @@ func update_animation_parameters(move_input : Vector2):
 
 func pick_new_state():
 	if velocity != Vector2.ZERO:
+		if state_machine.get_current_node() != "Walk":  # Avoid replaying the sound unnecessarily
+			audio_player.play()  # Play the boing sound
 		state_machine.travel("Walk")
 	else:
 		state_machine.travel("Idle")
-
 
 func _on_beer_2_mouse_entered() -> void:
 	print("ça drink")
