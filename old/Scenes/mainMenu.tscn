@@ -1,0 +1,85 @@
+[gd_scene load_steps=4 format=3 uid="uid://buixixkvcpvmr"]
+
+[ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_6kuo7"]
+[ext_resource type="Texture2D" uid="uid://cxesqlxodwmmb" path="res://Assets/Personals/wallpaperMenu.jpg" id="2_s1dqa"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_krk4f"]
+line_spacing = 6.0
+font_size = 25
+outline_size = 1
+
+[node name="mainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6kuo7")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.897
+anchor_bottom = 0.249
+offset_left = 662.0
+offset_top = -48.0
+offset_right = -260.24
+offset_bottom = 22.08
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_s1dqa")
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Background"]
+remote_path = NodePath("../Titre/Camera2D")
+
+[node name="Titre" type="Label" parent="Background"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -253.5
+offset_right = 253.5
+offset_bottom = 96.0
+grow_horizontal = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+text = "Menu Principal"
+label_settings = SubResource("LabelSettings_krk4f")
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="Camera2D" type="Camera2D" parent="Background/Titre"]
+position = Vector2(-146.5, 0)
+offset = Vector2(410, 200)
+zoom = Vector2(0.5, 0.5)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Background/Titre"]
+layout_mode = 0
+offset_left = 119.0
+offset_top = 83.0
+offset_right = 419.0
+offset_bottom = 221.0
+
+[node name="Nouvelle partie" type="Button" parent="Background/Titre/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 23
+text = "Nouvelle partie"
+
+[node name="Credits" type="Button" parent="Background/Titre/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 23
+text = "Crédits"
+
+[node name="Quitter" type="Button" parent="Background/Titre/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Quitter :'("
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+volume_db = -6.0
+autoplay = true
+
+[connection signal="button_down" from="Background/Titre/VBoxContainer/Nouvelle partie" to="." method="_on_nouvelle_partie_button_go_to_game"]
+[connection signal="button_down" from="Background/Titre/VBoxContainer/Credits" to="." method="_on_credits_button_credits"]
+[connection signal="button_down" from="Background/Titre/VBoxContainer/Quitter" to="." method="_on_quitter_button_down_quit"]

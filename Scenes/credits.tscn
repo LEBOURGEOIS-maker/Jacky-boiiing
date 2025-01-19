@@ -1,14 +1,43 @@
-[gd_scene load_steps=5 format=3 uid="uid://cu56j5uipmn84"]
+[gd_scene load_steps=12 format=3 uid="uid://cu56j5uipmn84"]
 
-[ext_resource type="Texture2D" uid="uid://cxesqlxodwmmb" path="res://Assets/Personals/wallpaperMenu.jpg" id="1_gwkoy"]
 [ext_resource type="Script" path="res://Scenes/backToMenu.gd" id="1_lub4b"]
+[ext_resource type="Texture2D" uid="uid://bopi3hl1hd56c" path="res://Assets/Personals/backgroundCredits.png" id="2_iaman"]
+
+[sub_resource type="FontFile" id="FontFile_uogbb"]
+cache/0/25/0/ascent = 0.0
+cache/0/25/0/descent = 0.0
+cache/0/25/0/underline_position = 0.0
+cache/0/25/0/underline_thickness = 0.0
+cache/0/25/0/scale = 1.0
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dy0mb"]
+bg_color = Color(0.554142, 0.575943, 0.825439, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_a64lm"]
 line_spacing = 6.0
 font_size = 25
 outline_size = 1
 
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_dsfyl"]
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_n1plq"]
+
+[sub_resource type="FontVariation" id="FontVariation_cex35"]
+
+[sub_resource type="Theme" id="Theme_002ng"]
+default_font = SubResource("FontVariation_cex35")
+default_font_size = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vysnd"]
+bg_color = Color(0.406458, 0.689165, 0.133321, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lqm6j"]
+bg_color = Color(0.625516, 0.606181, 0.466757, 1)
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -19,44 +48,46 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_lub4b")
 
-[node name="Background" type="TextureRect" parent="."]
+[node name="Background2" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -86.0
+offset_top = -114.0
+offset_right = 1838.0
+offset_bottom = 926.0
+texture = ExtResource("2_iaman")
+
+[node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
-anchors_preset = -1
-anchor_right = 0.897
-anchor_bottom = 0.249
-offset_left = 725.0
-offset_top = 5.0
-offset_right = -324.24
-offset_bottom = -29.92
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("1_gwkoy")
+offset_right = 432.9
+texture = ExtResource("2_iaman")
+expand_mode = 3
 
-[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Background"]
-remote_path = NodePath("../Titre/Camera2D")
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="TextureRect"]
+position = Vector2(416, 187)
+remote_path = NodePath("../../Camera2D")
 
-[node name="Titre" type="Label" parent="Background"]
+[node name="Titre" type="Label" parent="TextureRect"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -253.5
-offset_right = 253.5
-offset_bottom = 96.0
+offset_left = 362.55
+offset_top = 205.0
+offset_right = 869.55
+offset_bottom = 261.0
 grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontFile_uogbb")
+theme_override_styles/normal = SubResource("StyleBoxFlat_dy0mb")
 text = "Crédits"
 label_settings = SubResource("LabelSettings_a64lm")
 horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
 
-[node name="Camera2D" type="Camera2D" parent="Background/Titre"]
-position = Vector2(-146.5, 0)
-offset = Vector2(410, 200)
-zoom = Vector2(0.5, 0.5)
-
-[node name="CreditsBloc" type="Panel" parent="Background/Titre"]
+[node name="CreditsBloc" type="Panel" parent="TextureRect/Titre"]
+material = SubResource("CanvasItemMaterial_dsfyl")
 layout_mode = 2
 offset_left = 119.0
 offset_top = 87.0
@@ -64,22 +95,41 @@ offset_right = 419.0
 offset_bottom = 87.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_n1plq")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Background/Titre/CreditsBloc"]
+[node name="VBoxContainer" type="VBoxContainer" parent="TextureRect/Titre/CreditsBloc"]
 layout_mode = 0
 offset_top = -4.0
 offset_right = 300.0
 offset_bottom = 134.0
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Background/Titre/CreditsBloc/VBoxContainer"]
+[node name="RichTextLabel" type="RichTextLabel" parent="TextureRect/Titre/CreditsBloc/VBoxContainer"]
 layout_mode = 2
+size_flags_vertical = 3
+theme = SubResource("Theme_002ng")
 theme_override_colors/table_border = Color(0, 0, 0, 1)
-text = "itch.io : @Roseti (LEBOURGEOIS Emilie); @gogoud - LEBOURGEOIS Fabien"
+theme_override_colors/table_even_row_bg = Color(0, 0, 0, 1)
+theme_override_colors/table_odd_row_bg = Color(0, 0, 0, 1)
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
+theme_override_colors/selection_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_styles/background = SubResource("StyleBoxFlat_vysnd")
+theme_override_styles/normal = SubResource("StyleBoxFlat_lqm6j")
+text = "itch.io : 
+@Roseti - LEBOURGEOIS Emilie
+@gogoud - LEBOURGEOIS Fabien
+
+Toutes les images, musiques, sont faites maison ! =)"
 fit_content = true
 
-[node name="Retour" type="Button" parent="Background/Titre/CreditsBloc/VBoxContainer"]
+[node name="Retour" type="Button" parent="TextureRect/Titre/CreditsBloc/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
 text = "Retour
 "
 
-[connection signal="button_down" from="Background/Titre/CreditsBloc/VBoxContainer/Retour" to="." method="_on_retour_button_go_to_mainMenu"]
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(416, 187)
+offset = Vector2(410, 200)
+zoom = Vector2(0.5, 0.5)
+
+[connection signal="button_down" from="TextureRect/Titre/CreditsBloc/VBoxContainer/Retour" to="." method="_on_retour_button_go_to_mainMenu"]

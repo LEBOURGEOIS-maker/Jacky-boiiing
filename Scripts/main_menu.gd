@@ -1,14 +1,14 @@
 extends Control
 
-@onready var mainScene = preload("res://Scenes/mainScene.tscn")  # Préchargement de la scène principale
+@onready var niveau1 = preload("res://Scenes/niveau1.tscn")  # Préchargement de la scène principale
 @onready var creditsScene = preload("res://Scenes/credits.tscn")  # Préchargement de la scène des crédits
 
 # Fonction pour démarrer une nouvelle partie
 func _on_nouvelle_partie_button_go_to_game() -> void:
 	# Ajouter la scène actuelle à la pile via NavigationManager pour pouvoir revenir en arrière
-	NavigationManager.add_scene_to_stack("res://Scenes/mainScene.tscn")
+	NavigationManager.add_scene_to_stack("res://Scenes/niveau1.tscn")
 	# Changer la scène pour la scène de jeu
-	get_tree().change_scene_to_file("res://Scenes/mainScene.tscn")
+	get_tree().change_scene_to_file("res://Scenes/niveau1.tscn")
 
 # Fonction pour afficher les crédits
 func _on_credits_button_credits() -> void:
