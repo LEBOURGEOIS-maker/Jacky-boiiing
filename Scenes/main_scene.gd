@@ -38,7 +38,6 @@ func _on_next_level_button_pressed():
 	get_tree().change_scene_to_file("res://Scenes/niveau2.tscn")
 	
 func show_win_popup():
-	# Assurez-vous que le panneau est visible
 	panelGagner.visible = true
 	print("Panel found. Making it visible.")  # Debug : le panneau est trouvé
 	print("Panel visibility set to: ", panelGagner.visible)
@@ -56,16 +55,24 @@ func show_win_popup():
 	# Débogage de la position initiale du panneau
 	print("Initial Panel position: ", panelGagner.position)  # Affiche la position actuelle du panneau
 	
-	# Calculer la taille de l'écran du joueur (taille de la fenêtre du jeu)
-	var screen_size = get_viewport().size  # Cela donne la taille de la fenêtre du jeu
-	print("Screen size: ", screen_size)  # Déboguer la taille de l'écran
+	# Obtenez la position du joueur (assurez-vous que `Player` est un autre Node2D que vous référencez ici)
+	var player_position = $Player.position  # Remplace "Player" par le nom de ton nœud personnage si nécessaire
+	print("Player position: ", player_position)  # Déboguer la position du joueur
 
-	# Ajuster la taille du panneau pour qu'il remplisse l'écran
-	panelGagner.rect_min_size = screen_size  # Assure que le panneau prend toute la place
+	# Taille du panneau
+	var panel_size = panelGagner.get_size()  # Obtenez la taille réelle du panneau
+	print("Panel size: ", panel_size)  # Déboguer la taille du panneau
 
-	# Placer le panneau dans la position (0,0) pour qu'il commence en haut à gauche
-	panelGagner.position = Vector2(0, 0)
-	
+	# Calculer la position du panneau pour le centrer sur le joueur
+	var x_position = player_position.x - (panel_size.x / 2)  # Centrer sur l'axe X
+	var y_position = player_position.y - (panel_size.y / 2)  # Centrer sur l'axe Y
+
+	# Afficher la position calculée du panneau
+	print("Calculated Panel position: ", Vector2(x_position, y_position))  # Debug de la position calculée
+
+	# Positionner le panneau
+	panelGagner.position = Vector2(x_position, y_position)
+
 	# Assurez-vous que le panneau soit au-dessus des autres éléments
 	panelGagner.z_index = 10  # On place le panneau en haut des autres éléments UI
 	print("Panel Z-Index: ", panelGagner.z_index)  # Déboguer le Z-Index pour vérifier
@@ -75,7 +82,6 @@ func show_win_popup():
 
 	# Désactiver les contrôles du personnage
 	set_process(false)
-
 
 
 func _on_next_level_button_pressed_mainMenu() -> void:
