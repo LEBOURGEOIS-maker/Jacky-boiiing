@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 @export var move_speed : float = 100
 @export var starting_direction : Vector2 = Vector2(0,1)
-@export var timer_duration : float = 100  # Set the timer duration in seconds
+@export var timer_duration : float = 120  # Set the timer duration in seconds
 
 @onready var animation_tree = $AnimationTree
 @onready var state_machine = animation_tree.get("parameters/playback")

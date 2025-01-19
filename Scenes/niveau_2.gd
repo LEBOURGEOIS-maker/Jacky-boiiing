@@ -79,7 +79,7 @@ func show_win_popup():
 	print("Calculated Panel position: ", Vector2(x_position, y_position))  # Debug de la position calculée
 
 	# Positionner le panneau
-	panelGagner.position = Vector2(x_position + 200, y_position + 150)
+	panelGagner.position = Vector2(x_position, y_position)
 
 	# Assurez-vous que le panneau soit au-dessus des autres éléments
 	panelGagner.z_index = 10  # On place le panneau en haut des autres éléments UI
