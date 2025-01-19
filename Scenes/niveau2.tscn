@@ -1,0 +1,280 @@
+[gd_scene load_steps=15 format=4 uid="uid://53bej6d5owib"]
+
+[ext_resource type="Script" path="res://Scenes/main_scene.gd" id="1_0nqk5"]
+[ext_resource type="PackedScene" uid="uid://qwwidd5peaqv" path="res://Characters/character_body_2d.tscn" id="2_h1xlg"]
+[ext_resource type="Script" path="res://Characters/player.gd" id="3_oqgft"]
+[ext_resource type="Script" path="res://Scripts/looseAndRetry.gd" id="4_lyxc2"]
+[ext_resource type="Script" path="res://Scenes/next_level_button.gd" id="5_5fgb5"]
+[ext_resource type="Texture2D" uid="uid://dj7j26n7ciu5" path="res://Assets/Libraries/Sprout Lands - Sprites - Basic pack/Tilesets/Grass.png" id="6_8lgka"]
+[ext_resource type="Texture2D" uid="uid://u0dslygj4bey" path="res://Assets/Personals/Tilesetv3.png" id="7_ugboj"]
+[ext_resource type="PackedScene" uid="uid://bnclgwkqmdeli" path="res://Scenes/beer.tscn" id="8_iro47"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wr5d2"]
+bg_color = Color(0.155485, 0.167241, 0.387745, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jgk3i"]
+bg_color = Color(0.734342, 0.548435, 0.516495, 1)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nshra"]
+texture = ExtResource("6_8lgka")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+9:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+9:2/0 = 0
+10:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+8:3/0 = 0
+9:3/0 = 0
+10:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+8:4/0 = 0
+9:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+8:5/0 = 0
+9:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+8:6/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_num5l"]
+texture = ExtResource("7_ugboj")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 8, -8, -8, 8, -8, 8, -6.875, -3.875, -7, -6.75, -4, -7, 8)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -7, -8, -6.875)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, 7, 8, 6.75, -3.875, 3.875, -7, -8, -6.875)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -7.125, -8, -7, 8, -8, 8)
+1:1/0 = 0
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, -8, 8, 8, 6.875, 8, 6.875, -8)
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -6.75, -8, -6.75, 3.75, -4.875, 5.125, -3.625, 6.875, 8, 6.625, 8, 8, -8, 8)
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 6.75, 8, 6.625, 8, 8, -8, 8)
+2:2/0 = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, -8, 8, 8, -8, 8, -8, 6.875, 3.875, 6.75, 6.875, 4, 7, -8)
+
+[sub_resource type="TileSet" id="TileSet_vgcvj"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_nshra")
+sources/1 = SubResource("TileSetAtlasSource_num5l")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ggebb"]
+size = Vector2(8.25, 29.625)
+
+[node name="GameLevel" type="Node2D"]
+script = ExtResource("1_0nqk5")
+
+[node name="Player" parent="." instance=ExtResource("2_h1xlg")]
+script = ExtResource("3_oqgft")
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
+remote_path = NodePath("../Camera2D")
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="PanelPerdu" type="Panel" parent="UI"]
+offset_left = 40.0
+offset_top = -216.0
+offset_right = 271.0
+offset_bottom = -104.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_wr5d2")
+
+[node name="Label" type="Label" parent="UI/PanelPerdu"]
+layout_mode = 0
+offset_left = 90.0
+offset_top = 11.0
+offset_right = 141.0
+offset_bottom = 34.0
+text = "Perdu "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RetryButton" type="Button" parent="UI/PanelPerdu"]
+layout_mode = 0
+offset_left = 73.0
+offset_top = 57.0
+offset_right = 156.0
+offset_bottom = 94.0
+text = "Rejouer"
+script = ExtResource("4_lyxc2")
+
+[node name="TimerPanel" type="Panel" parent="UI"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -1938.0
+offset_top = 23.0
+offset_right = -1855.0
+offset_bottom = 56.0
+grow_horizontal = 0
+tooltip_text = "Timer"
+theme_override_styles/panel = SubResource("StyleBoxFlat_wr5d2")
+
+[node name="Label" type="Label" parent="UI/TimerPanel"]
+layout_mode = 0
+offset_left = 45.0
+offset_top = 6.0
+offset_right = 93.0
+offset_bottom = 29.0
+vertical_alignment = 1
+
+[node name="PanelGagner" type="Panel" parent="UI"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -115.5
+offset_top = -56.0
+offset_right = 115.5
+offset_bottom = 56.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_jgk3i")
+
+[node name="BoxContainer" type="BoxContainer" parent="UI/PanelGagner"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="UI/PanelGagner/BoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 11
+
+[node name="NextLevelButton" type="Button" parent="UI/PanelGagner/BoxContainer"]
+layout_mode = 2
+text = "Niveau 2"
+script = ExtResource("5_5fgb5")
+
+[node name="TileMap" type="TileMapLayer" parent="."]
+z_index = -5
+tile_map_data = PackedByteArray("AAD///7/AQABAAAAAAAAAP7/AQABAAAAAAD+//7/AQAAAAAAAAD+////AQAAAAEAAAD+/wAAAQAAAAIAAAD//wAAAQABAAIAAAAAAAAAAQABAAIAAAABAAAAAQACAAIAAAABAP7/AQABAAAAAAACAP//AQABAAIAAAACAP7/AQABAAAAAAD/////AQABAAEAAAAAAP//AQABAAEAAAABAP//AQABAAEAAAADAP//AQABAAIAAAADAP7/AQABAAAAAAAFAP//AQACAAIAAAAEAP//AQABAAIAAAAFAP7/AQACAAEAAAAEAP7/AQABAAEAAAAFAP3/AQACAAEAAAAFAPz/AQACAAAAAAAEAP3/AQABAAEAAAADAP3/AQABAAEAAAACAP3/AQABAAEAAAABAP3/AQABAAEAAAABAPz/AQABAAAAAAACAPz/AQABAAAAAAADAPz/AQABAAAAAAAEAPz/AQABAAAAAAAAAPz/AQABAAAAAAAAAP3/AQABAAEAAAD///3/AQABAAEAAAD///z/AQABAAAAAAD+//3/AQABAAEAAAD+//z/AQABAAAAAAD9//z/AQABAAAAAAD8//z/AQABAAAAAAD7//z/AQAAAAAAAAD7//3/AQAAAAEAAAD7//7/AQAAAAEAAAD7////AQAAAAEAAAD7/wAAAQAAAAEAAAD8//3/AQABAAEAAAD9//3/AQABAAEAAAD8//7/AQABAAEAAAD8////AQABAAEAAAD9////AQABAAEAAAD9/wAAAQABAAEAAAD8/wAAAQABAAEAAAD9/wMAAQACAAIAAAD9/wIAAQACAAEAAAD9/wEAAQACAAEAAAD8/wMAAQABAAEAAAD7/wQAAQABAAEAAAD8/wQAAQACAAIAAAD7/wMAAQABAAEAAAD7/wIAAQABAAEAAAD8/wIAAQABAAEAAAD8/wEAAQABAAEAAAD6/wEAAQABAAAAAAD5/wEAAQAAAAAAAAD5/wIAAQAAAAEAAAD5/wMAAQAAAAEAAAD6/wIAAQABAAEAAAD6/wQAAQABAAEAAAD5/wQAAQAAAAEAAAD5/wcAAQAAAAIAAAD5/wYAAQAAAAEAAAD5/wUAAQAAAAEAAAD6/wcAAQABAAIAAAD7/wcAAQABAAIAAAD8/wcAAQABAAIAAAD9/wcAAQABAAIAAAD//wcAAQACAAIAAAD+/wcAAQABAAIAAAD6/wUAAQABAAEAAAD6/wYAAQABAAEAAAD7/wYAAQABAAEAAAD7/wUAAQABAAEAAAD8/wUAAQABAAEAAAD8/wYAAQABAAEAAAD9/wYAAQABAAEAAAD+/wYAAQABAAEAAAD9/wUAAQABAAAAAAD+/wUAAQABAAAAAAD//wUAAQACAAAAAAD//wYAAQABAAEAAAAAAAUAAQAAAAAAAAAAAAcAAQAAAAIAAAAAAAYAAQABAAEAAAABAAYAAQABAAEAAAACAAYAAQABAAEAAAABAAUAAQABAAAAAAABAAcAAQABAAIAAAACAAcAAQACAAIAAAACAAUAAQACAAAAAAADAAYAAQABAAEAAAADAAUAAQABAAEAAAAEAAYAAQACAAEAAAAEAAUAAQACAAEAAAAEAAQAAQACAAEAAAADAAQAAQABAAEAAAADAAcAAQAAAAIAAAAEAAcAAQACAAIAAAAEAAMAAQACAAAAAAADAAMAAQABAAAAAAACAAMAAQABAAAAAAABAAMAAQABAAAAAAAAAAMAAQABAAEAAAD//wMAAQABAAEAAAD//wQAAQABAAEAAAAAAAQAAQABAAEAAAABAAQAAQABAAEAAAACAAQAAQABAAEAAAD//wIAAQABAAEAAAAAAAIAAQABAAEAAAACAAIAAQABAAIAAAABAAIAAQABAAIAAAD//wEAAQABAAEAAAAAAAEAAQABAAEAAAABAAEAAQABAAEAAAACAAEAAQABAAEAAAADAAEAAQABAAEAAAADAAIAAQABAAIAAAAEAAEAAQABAAEAAAAEAAIAAQABAAIAAAAFAAEAAQABAAEAAAAFAAIAAQABAAIAAAAGAAEAAQABAAEAAAAGAAIAAQABAAIAAAACAAAAAQABAAEAAAADAAAAAQABAAEAAAAEAAAAAQABAAEAAAAFAAAAAQABAAEAAAAGAAAAAQABAAEAAAAHAAIAAQABAAIAAAAHAAEAAQABAAEAAAAHAAAAAQABAAEAAAAJAAIAAQACAAIAAAAIAAIAAQABAAIAAAAIAAEAAQABAAEAAAAIAAAAAQABAAEAAAAJAAEAAQACAAEAAAAJAAAAAQACAAEAAAAGAP3/AQAAAAAAAAAGAP7/AQAAAAEAAAAGAP//AQAAAAEAAAAHAP//AQABAAEAAAAHAP7/AQABAAEAAAAIAP7/AQABAAEAAAAIAP//AQABAAEAAAAIAP3/AQABAAEAAAAHAP3/AQABAAEAAAAJAP3/AQACAAAAAAAJAP7/AQABAAEAAAAJAP//AQABAAEAAAAHAPr/AQABAAEAAAAHAPv/AQABAAEAAAAHAPz/AQABAAEAAAAIAPz/AQABAAEAAAAIAPv/AQABAAEAAAAIAPr/AQABAAEAAAAGAPr/AQABAAEAAAAGAPn/AQABAAEAAAAIAPn/AQABAAEAAAAHAPn/AQABAAEAAAAEAPn/AQABAAEAAAAFAPn/AQABAAEAAAAFAPr/AQABAAEAAAAEAPr/AQABAAEAAAADAPr/AQABAAEAAAADAPn/AQABAAEAAAACAPr/AQABAAIAAAACAPn/AQABAAEAAAABAPn/AQABAAEAAAABAPr/AQABAAIAAAAAAPr/AQABAAIAAAAAAPn/AQABAAEAAAD///n/AQAAAAEAAAD///r/AQAAAAIAAAD///j/AQAAAAEAAAD///f/AQAAAAEAAAABAPf/AQABAAEAAAACAPf/AQACAAEAAAACAPj/AQACAAEAAAABAPj/AQABAAEAAAAAAPj/AQABAAEAAAD///X/AQAAAAEAAAD///b/AQAAAAEAAAAAAPb/AQABAAEAAAABAPb/AQABAAEAAAACAPb/AQACAAEAAAACAPX/AQACAAEAAAABAPX/AQABAAEAAAAAAPX/AQABAAEAAAD///T/AQAAAAEAAAAAAPT/AQABAAEAAAABAPT/AQABAAEAAAACAPT/AQACAAEAAAD///P/AQAAAAEAAAAAAPP/AQABAAEAAAABAPP/AQABAAEAAAACAPP/AQACAAEAAAAKAP7/AQABAAEAAAAKAP//AQABAAEAAAALAP//AQABAAEAAAALAP7/AQABAAEAAAAMAP7/AQABAAEAAAAMAP//AQABAAEAAAANAP7/AQABAAEAAAAOAP7/AQABAAEAAAAOAP//AQABAAEAAAAPAP7/AQABAAEAAAAPAP//AQABAAEAAAAQAP7/AQABAAAAAAAQAP//AQABAAEAAAARAP7/AQACAAAAAAARAP//AQACAAEAAAAPAAEAAQABAAEAAAAQAAEAAQABAAEAAAARAAEAAQACAAEAAAAOAAEAAQABAAEAAAAOAAIAAQAAAAEAAAAPAAIAAQABAAEAAAAQAAIAAQABAAEAAAARAAIAAQACAAEAAAAQAAAAAQABAAEAAAAPAAAAAQABAAEAAAARAAAAAQACAAEAAAARAAMAAQACAAEAAAARAAQAAQACAAEAAAARAAUAAQACAAEAAAAQAAQAAQABAAEAAAAQAAUAAQABAAEAAAAOAAMAAQAAAAEAAAAOAAQAAQAAAAEAAAAPAAMAAQABAAEAAAAPAAQAAQABAAEAAAAPAAUAAQABAAEAAAAOAAUAAQAAAAEAAAAOAAYAAQAAAAEAAAAOAAcAAQAAAAEAAAAOAAgAAQAAAAEAAAARAAYAAQACAAEAAAARAAcAAQACAAEAAAARAAgAAQACAAEAAAAQAAYAAQABAAEAAAAQAAcAAQABAAEAAAAPAAcAAQABAAEAAAAPAAgAAQABAAEAAAAQAAgAAQABAAEAAAARAAkAAQACAAEAAAARAAoAAQACAAEAAAARAAsAAQACAAIAAAAQAAkAAQABAAEAAAAQAAoAAQABAAEAAAAPAAoAAQABAAEAAAAPAAkAAQABAAEAAAAQAAsAAQABAAIAAAAPAAsAAQABAAIAAAAOAAsAAQABAAIAAAANAAsAAQABAAIAAAAMAAsAAQABAAIAAAALAAsAAQABAAIAAAAKAAsAAQAAAAIAAAAKAAoAAQAAAAEAAAAKAAkAAQAAAAEAAAAKAAgAAQAAAAEAAAAKAAcAAQAAAAEAAAAKAAYAAQABAAEAAAAOAAkAAQABAAEAAAAOAAoAAQABAAEAAAANAAoAAQABAAEAAAAMAAoAAQABAAEAAAALAAoAAQABAAEAAAALAAkAAQABAAEAAAALAAgAAQABAAEAAAALAAcAAQABAAEAAAALAAYAAQABAAEAAAALAAQAAQACAAAAAAALAAUAAQACAAEAAAAKAAUAAQABAAEAAAAJAAUAAQABAAEAAAAJAAQAAQABAAAAAAAKAAQAAQABAAAAAAAHAAQAAQAAAAAAAAAIAAQAAQABAAAAAAAIAAUAAQABAAEAAAAIAAYAAQABAAEAAAAIAAcAAQABAAEAAAAIAAgAAQABAAEAAAAHAAUAAQAAAAEAAAAHAAYAAQAAAAEAAAAHAAcAAQAAAAEAAAAHAAgAAQAAAAEAAAAIAAkAAQABAAEAAAAIAAoAAQABAAEAAAAIAAsAAQACAAIAAAAHAAoAAQABAAEAAAAHAAsAAQABAAIAAAAGAAsAAQABAAIAAAAFAAsAAQABAAIAAAAGAAkAAQABAAAAAAAFAAkAAQABAAAAAAAEAAkAAQABAAAAAAADAAkAAQABAAAAAAAGAAoAAQABAAEAAAAFAAoAAQABAAEAAAAEAAoAAQABAAEAAAADAAoAAQABAAEAAAAHAAkAAQABAAEAAAACAAkAAQABAAAAAAABAAkAAQABAAAAAAAAAAkAAQABAAAAAAD//wkAAQAAAAAAAAD//wsAAQAAAAIAAAAAAAsAAQABAAIAAAABAAsAAQABAAIAAAACAAsAAQABAAIAAAADAAsAAQABAAIAAAAEAAsAAQABAAIAAAACAAoAAQABAAEAAAABAAoAAQABAAEAAAAAAAoAAQABAAEAAAD//woAAQABAAEAAAD+/woAAQABAAEAAAD9/woAAQABAAEAAAD+/wkAAQACAAAAAAD+/wsAAQACAAIAAAD9/wsAAQABAAIAAAD9/wkAAQABAAAAAAD8/wwAAQACAAEAAAD8/w0AAQACAAIAAAD7/w0AAQABAAIAAAD6/w0AAQABAAIAAAD5/w0AAQABAAIAAAD4/w0AAQAAAAIAAAD8/wgAAQACAAAAAAD7/wgAAQABAAAAAAD6/wgAAQABAAAAAAD5/wgAAQABAAAAAAD4/wgAAQAAAAAAAAD8/wkAAQABAAEAAAD8/wsAAQABAAEAAAD8/woAAQABAAEAAAD5/wwAAQABAAEAAAD6/wwAAQABAAEAAAD7/wwAAQABAAEAAAD7/wsAAQABAAEAAAD5/wsAAQABAAEAAAD7/woAAQABAAEAAAD7/wkAAQABAAEAAAD6/wkAAQABAAEAAAD5/wkAAQABAAEAAAD4/wkAAQABAAEAAAD4/woAAQABAAEAAAD4/wsAAQABAAEAAAD5/woAAQABAAEAAAD4/wwAAQABAAEAAAD3/woAAQABAAEAAAD3/wsAAQABAAEAAAD3/wkAAQABAAAAAAD3/wwAAQABAAIAAAD2/wwAAQABAAIAAAD1/wwAAQABAAIAAAD0/wwAAQABAAIAAAD2/wkAAQABAAAAAAD1/wkAAQABAAAAAAD0/wkAAQABAAAAAAD2/woAAQABAAEAAAD2/wsAAQABAAEAAAD1/wsAAQABAAEAAAD1/woAAQABAAEAAAD0/wsAAQABAAEAAADz/wsAAQABAAEAAADz/wkAAQABAAAAAADz/wwAAQABAAIAAADy/wsAAQABAAEAAADy/wwAAQABAAIAAADy/wkAAQABAAAAAADy/woAAQABAAEAAADx/woAAQABAAEAAADx/wsAAQABAAEAAADw/wsAAQABAAEAAADw/woAAQABAAEAAADv/woAAQABAAEAAADv/wsAAQABAAEAAADu/wwAAQABAAEAAADu/wsAAQABAAEAAADu/woAAQABAAEAAADu/wkAAQABAAEAAADt/wkAAQABAAEAAADs/wkAAQABAAEAAADr/wkAAQABAAEAAADq/wkAAQABAAEAAADq/woAAQABAAEAAADq/wsAAQABAAEAAADq/wwAAQABAAEAAADr/wwAAQABAAEAAADs/wwAAQABAAEAAADt/wwAAQABAAEAAADr/wsAAQABAAEAAADr/woAAQABAAEAAADt/woAAQABAAEAAADt/wsAAQABAAEAAADp/wkAAQABAAEAAADp/woAAQABAAEAAADp/wsAAQABAAEAAADp/wwAAQABAAEAAAA=")
+tile_set = SubResource("TileSet_vgcvj")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+
+[node name="beer" parent="." instance=ExtResource("8_iro47")]
+position = Vector2(-347, 176)
+
+[node name="Area2D2" type="Area2D" parent="beer"]
+position = Vector2(-1, -1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="beer/Area2D2"]
+position = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_ggebb")
+
+[node name="beer2" parent="." instance=ExtResource("8_iro47")]
+position = Vector2(25, 169)
+
+[node name="Area2D2" type="Area2D" parent="beer2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="beer2/Area2D2"]
+position = Vector2(0.5, -1.1875)
+shape = SubResource("RectangleShape2D_ggebb")
+
+[node name="beer3" parent="." instance=ExtResource("8_iro47")]
+position = Vector2(15, -184)
+
+[node name="Area2D2" type="Area2D" parent="beer3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="beer3/Area2D2"]
+position = Vector2(1, -1)
+shape = SubResource("RectangleShape2D_ggebb")
+
+[node name="beer4" parent="." instance=ExtResource("8_iro47")]
+position = Vector2(254, 162)
+
+[node name="Area2D2" type="Area2D" parent="beer4"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="beer4/Area2D2"]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_ggebb")
+
+[node name="beer5" parent="." instance=ExtResource("8_iro47")]
+position = Vector2(-82, 97)
+
+[node name="Area2D2" type="Area2D" parent="beer5"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="beer5/Area2D2"]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_ggebb")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="KeyCounterLabel" type="Label" parent="CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[connection signal="pressed" from="UI/PanelPerdu/RetryButton" to="UI/PanelPerdu/RetryButton" method="_on_pressed"]
+[connection signal="pressed" from="UI/PanelGagner/BoxContainer/NextLevelButton" to="." method="_on_next_level_button_pressed"]
+[connection signal="body_entered" from="beer/Area2D2" to="Player" method="_on_area_2d_2_body_entered"]
+[connection signal="mouse_entered" from="beer2" to="Player" method="_on_beer_2_mouse_entered"]
+[connection signal="body_entered" from="beer2/Area2D2" to="Player" method="_on_area_2d_2_body_entered"]
+[connection signal="body_entered" from="beer3/Area2D2" to="Player" method="_on_area_2d_2_body_entered"]
+[connection signal="body_entered" from="beer4/Area2D2" to="Player" method="_on_area_2d_2_body_entered"]
+[connection signal="body_entered" from="beer5/Area2D2" to="Player" method="_on_area_2d_2_body_entered"]

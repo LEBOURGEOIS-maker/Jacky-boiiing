@@ -1,6 +1,4 @@
-res://Scenes/newGame.tscn
-res://Scenes/new_game.gd
 res://Scenes/mainMenu.tscn
 res://Scenes/credits.tscn
 res://Scenes/beer.tscn
-res://Scenes/xxxxxx.tscn
+res://Scenes/niveau2.tscn
